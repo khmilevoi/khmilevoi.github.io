@@ -11,7 +11,7 @@
 			<div class="header-wrapper">
 				<h1 class="logo">
 					<a href="#">
-						<span class="image">
+						<span class="image" style="width: 50px; height: 50px;">
 							<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 							<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
 								<title>Page 1</title>
@@ -29,7 +29,7 @@
 					</a>
 				</h1>
 				<nav class="menu local-link" id="home-menu">
-					<div class="menu-item" id="home-menu-item-1" style="height: 65px;"><a href="#about">About</a></div>
+					<div class="menu-item" id="home-menu-item-1"><a href="#about">About</a></div>
 					<div class="menu-item" id="home-menu-item-2"><a href="#testimonials">Testimonials</a></div>
 					<div class="menu-item" id="home-menu-item-3"><a href="#features">Features</a></div>
 					<div class="menu-item" id="home-menu-item-4"><a href="#team">Team</a></div>
@@ -229,19 +229,87 @@
 		</div>
 	</section>
 
-	<section class="testimonials" id="testimonials"></section>
+	<section class="testimonials" id="testimonials">
 
-	<section class="features" id="features"></section>
+		<div class="testimonials-wrapper">
+			<div class="testimonials-header"><span>Many Happy Customers</span></div>
+			<div class="testimonials-holder">
+				<div class="testimonial">
+					<img src="img/profile-1.png" alt="profile-1">
+					<div class="quote-holder">
+						<p class="quote">Testimonial goes here Donec felis odio, sagittis eu cursus ac, porttitor eu purus. In a bibendum dui. Nullam id est sed felis rutrum tincidunt eu nec nisi morbi euismod semper neque sed lobortis.</p>
+						<span class="autor">@JohnK, San Francisco</span>
+					</div>
+				</div>
+				<div class="testimonial">
+					<img src="img/profile-2.png" alt="profile-2">
+					<div class="quote-holder">
+						<p class="quote">Testimonial goes here fermentum sed pharetra in, aliquet sodales quam. Ut sed turpis quis orci viverra aliquet interdum ut ipsum.</p>
+						<span class="autor">@LisaWhite, London</span>
+					</div>
+				</div>
+				<div class="testimonial">
+					<img src="img/profile-3.png" alt="profile-3">
+					<div class="quote-holder">
+						<p class="quote">Testimonial goes here vestibulum non hendrerit lorem, luctus tincidunt erat. Sed pharetra aliquam posuere. Pellentesque sollicitudin.</p>
+						<span class="autor">@MattH, Berlin</span>
+					</div>
+				</div>
+				<div class="testimonial">
+					<img src="img/profile-4.png" alt="profile-4">
+					<div class="quote-holder">
+						<p class="quote">Testimonial goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis</p>
+						<span class="autor">@RyanW, Paris</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	<section class="features" id="features">
+
+<div class="features-wrapper">
+	<div class="features-header">
+		<span class="title">Discover Features</span>
+		<p class="subtitle">AppKit comes with an AngularJS version, 4 colour schemes and 100+ components</p>
+	</div>
+	<div class="tabbed-area">
+		<div class="tab-panel">
+			<div class="panel panel-1"><img src="img/feature-1.png" alt="features-1"></div>
+			<div class="panel panel-2"><img src="img/feature-2.png" alt="features-2"></div>
+			<div class="panel panel-3"><img src="img/feature-3.png" alt="features-3"></div>
+			<div class="panel panel-4"><img src="img/feature-4.png" alt="features-4"></div>
+			<div class="panel panel-5"><img src="img/feature-5.png" alt="features-5"></div>
+			<div class="panel panel-6"><img src="img/feature-6.png" alt="features-6"></div>
+			<div class="panel panel-7"><img src="img/feature-7.png" alt="features-7"></div>
+			<div class="panel panel-8"><img src="img/feature-8.png" alt="features-8"></div>
+		</div>
+		<nav class="tab-nav">
+			<div class="nav-item item-1"><i class="fa fa-magic" aria-hidden="true"></i><span>20+ Use Case-based App Pages</span></div>
+			<div class="nav-item item-2"><i class="fa fa-cubes"></i><span>100+ Components and Widgets</span></div>
+			<div class="nav-item item-3"><i class="fa fa-bar-chart"></i><span>Useful Chart Libraries</span></div>
+			<div class="nav-item item-4"><i class="fa fa-star"></i><span>AngularJS Version Included</span></div>
+			<div class="nav-item item-5"><i class="fa fa-rocket"></i><span>Built on Bootstrap 3</span></div>
+			<div class="nav-item item-6"><i class="fa fa-tablet"></i><span>Fully Responsive</span></div>
+			<div class="nav-item item-7"><i class="fa fa-file-code-o"></i><span>Valid HTML5 + CSS3</span></div>
+			<div class="nav-item item-8"><i class="fa fa-heart"></i><span>Free Updates & Support + Documentation</span></div>
+		</nav>
+	</div>
+</div>
+
+	</section>
 
 	<section class="team" id="team"></section>
 
 	<section class="pricing" id="pricing"></section>
-	
+
 	<section class="contact" id="contact"></section>
 
 </body>
 <script src="js/libs.min.js"></script>
 <script src="js/common.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <link rel="stylesheet" href="css/libs.min.css">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/main.min.css">
