@@ -24,7 +24,7 @@ $(document).ready(function() {
 
 	});
 
-	//Link
+	//Nav-Link
 
 	// about
 
@@ -102,6 +102,119 @@ $(document).ready(function() {
 			$("#home-menu-item-6").removeClass("active-link");
 		}
 
+	});
+
+	// Tabbed-area
+
+	// nav-item-1
+
+	$(".nav-item-1").click(function() {
+		$(".tabbed-area").addClass("expand-panel-1"),
+		$(".tabbed-area").removeClass("expand-panel-2"),
+		$(".tabbed-area").removeClass("expand-panel-3"),
+		$(".tabbed-area").removeClass("expand-panel-4"),
+		$(".tabbed-area").removeClass("expand-panel-5"),
+		$(".tabbed-area").removeClass("expand-panel-6"),
+		$(".tabbed-area").removeClass("expand-panel-7"),
+		$(".tabbed-area").removeClass("expand-panel-8");
+	});
+
+
+	// nav-item-2
+
+	$(".nav-item-2").click(function() {
+		$(".tabbed-area").removeClass("expand-panel-1"),
+		$(".tabbed-area").addClass("expand-panel-2"),
+		$(".tabbed-area").removeClass("expand-panel-3"),
+		$(".tabbed-area").removeClass("expand-panel-4"),
+		$(".tabbed-area").removeClass("expand-panel-5"),
+		$(".tabbed-area").removeClass("expand-panel-6"),
+		$(".tabbed-area").removeClass("expand-panel-7"),
+		$(".tabbed-area").removeClass("expand-panel-8");
+	});
+
+
+	// nav-item-3
+
+	$(".nav-item-3").click(function() {
+		$(".tabbed-area").removeClass("expand-panel-1"),
+		$(".tabbed-area").removeClass("expand-panel-2"),
+		$(".tabbed-area").addClass("expand-panel-3"),
+		$(".tabbed-area").removeClass("expand-panel-4"),
+		$(".tabbed-area").removeClass("expand-panel-5"),
+		$(".tabbed-area").removeClass("expand-panel-6"),
+		$(".tabbed-area").removeClass("expand-panel-7"),
+		$(".tabbed-area").removeClass("expand-panel-8");
+	});
+
+
+	// nav-item-4
+
+	$(".nav-item-4").click(function() {
+		$(".tabbed-area").removeClass("expand-panel-1"),
+		$(".tabbed-area").removeClass("expand-panel-2"),
+		$(".tabbed-area").removeClass("expand-panel-3"),
+		$(".tabbed-area").addClass("expand-panel-4"),
+		$(".tabbed-area").removeClass("expand-panel-5"),
+		$(".tabbed-area").removeClass("expand-panel-6"),
+		$(".tabbed-area").removeClass("expand-panel-7"),
+		$(".tabbed-area").removeClass("expand-panel-8");
+	});
+
+
+	// nav-item-5
+
+	$(".nav-item-5").click(function() {
+		$(".tabbed-area").removeClass("expand-panel-1"),
+		$(".tabbed-area").removeClass("expand-panel-2"),
+		$(".tabbed-area").removeClass("expand-panel-3"),
+		$(".tabbed-area").removeClass("expand-panel-4"),
+		$(".tabbed-area").addClass("expand-panel-5"),
+		$(".tabbed-area").removeClass("expand-panel-6"),
+		$(".tabbed-area").removeClass("expand-panel-7"),
+		$(".tabbed-area").removeClass("expand-panel-8");
+	});
+
+
+	// nav-item-6
+
+	$(".nav-item-6").click(function() {
+		$(".tabbed-area").removeClass("expand-panel-1"),
+		$(".tabbed-area").removeClass("expand-panel-2"),
+		$(".tabbed-area").removeClass("expand-panel-3"),
+		$(".tabbed-area").removeClass("expand-panel-4"),
+		$(".tabbed-area").removeClass("expand-panel-5"),
+		$(".tabbed-area").addClass("expand-panel-6"),
+		$(".tabbed-area").removeClass("expand-panel-7"),
+		$(".tabbed-area").removeClass("expand-panel-8");
+	});
+
+
+	// nav-item-7
+
+	$(".nav-item-7").click(function() {
+		$(".tabbed-area").removeClass("expand-panel-1"),
+		$(".tabbed-area").removeClass("expand-panel-2"),
+		$(".tabbed-area").removeClass("expand-panel-3"),
+		$(".tabbed-area").removeClass("expand-panel-4"),
+		$(".tabbed-area").removeClass("expand-panel-5"),
+		$(".tabbed-area").removeClass("expand-panel-6"),
+		$(".tabbed-area").addClass("expand-panel-7"),
+		$(".tabbed-area").removeClass("expand-panel-8");
+	});
+
+
+	// nav-item-8
+
+	$(".nav-item-8").click(function() {
+		$(".tabbed-area").removeClass("expand-panel-1"),
+		$(".tabbed-area").removeClass("expand-panel-2"),
+		$(".tabbed-area").removeClass("expand-panel-3"),
+		$(".tabbed-area").removeClass("expand-panel-4"),
+		$(".tabbed-area").removeClass("expand-panel-5"),
+		$(".tabbed-area").removeClass("expand-panel-6"),
+		$(".tabbed-area").removeClass("expand-panel-7"),
+		$(".tabbed-area").addClass("expand-panel-8");
 	});
 
 });
