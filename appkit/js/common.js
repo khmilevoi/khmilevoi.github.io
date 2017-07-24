@@ -81,7 +81,7 @@ $(document).ready(function() {
 	// pricing
 
 	$(window).scroll(function() {
-		if ($(this).scrollTop() < $(".home").height() + $(".about").height() + $(".testimonials").height() + $(".features").height() + $(".team").height() + $(".pricing").height()) {
+		if ($(this).scrollTop() < $(".home").height() + $(".about").height() + $(".testimonials").height() + $(".features").height() + $(".team").height() + $(".pricing").height() / 2) {
 			$("#home-menu-item-5").addClass("active-link");
 		} else {
 			$("#home-menu-item-5").removeClass("active-link");
@@ -98,7 +98,7 @@ $(document).ready(function() {
 			$("#home-menu-item-6").addClass("active-link");
 		} else {
 			$("#home-menu-item-6").removeClass("active-link");
-		} if ($(this).scrollTop() < $(".home").height() + $(".about").height() + $(".testimonials").height() + $(".features").height() + $(".team").height() + $(".pricing").height()) {
+		} if ($(this).scrollTop() < $(".home").height() + $(".about").height() + $(".testimonials").height() + $(".features").height() + $(".team").height() + $(".pricing").height() / 2) {
 			$("#home-menu-item-6").removeClass("active-link");
 		}
 
