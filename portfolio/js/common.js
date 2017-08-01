@@ -49,4 +49,13 @@ $(document).ready(function() {
 		$("body").removeClass("active-button-menu");
 	});
 
+	// Прелоадер
+
+	$(window).on("load", function () {
+	 $preloader = $(".page-preloader"),
+		 $loader = $preloader.find(".loader");
+	 $loader.delay(3000).fadeOut("slow");
+	 $preloader.delay(3000).fadeOut("slow");
+ });
+
 });
