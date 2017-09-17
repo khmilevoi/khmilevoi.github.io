@@ -18,9 +18,6 @@ $(document).ready(function() {
     $("html,body").animate({scrollTop: length}, 400);
   });
 
-  //
-
-
   // Пользовательские функции
 
   // Фиксированное меню
@@ -59,7 +56,7 @@ $(document).ready(function() {
         $(this).removeClass("active");
       }
     });
-  };
+  }
 
   $(document).ready(function () {
 
@@ -103,6 +100,23 @@ $(document).ready(function() {
     } else {
       $(".skill-scale").attr("style", "width:100% !important");
     }
+  });
+
+  //E-mail Ajax Send
+  $(".c-form").submit(function() { //Change
+    var th = $(this);
+    $.ajax({
+      type: "POST",
+      url: "mail.php", //Change
+      data: th.serialize()
+    }).done(function() {
+      alert("Thank you!");
+      setTimeout(function() {
+        // Done Functions
+        th.trigger("reset");
+      }, 1000);
+    });
+    return false;
   });
 
   // Конец

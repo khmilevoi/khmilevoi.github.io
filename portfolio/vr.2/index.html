@@ -28,7 +28,7 @@
 					<span class="menu-itm"><a href="#works">					Works					</a></span>
 					<span class="menu-itm"><a href="#skills">					Skills				</a></span>
 					<span class="menu-itm"><a href="#testimonilas">		Testimonials	</a></span>
-					<span class="menu-itm"><a href="#contacts">				Contacts			</a></span>
+					<span class="menu-itm"><a href="#contact">				Contact			</a></span>
 				</nav>
 			</div>
 		</div>
@@ -38,9 +38,9 @@
 		<div class="home page-section" id="home">
 			<div class="wrapper">
 				<div class="text-wrapper">
-					<h3 class="name">					 	Khmilevoi Ale 	<span>x</span> </h3>
-					<h1 class="nickname"> 			Satanist 				<span>o</span> </h1>
-					<h4 class="description"> 		style is lif 		<span>e</span> </h4>
+					<h3 class="name">					 	Khmilevoi Ale<span>x</span> 	</h3>
+					<h1 class="nickname"> 			Satanist<span>o</span> 				</h1>
+					<h4 class="description"> 		style is lif<span>e</span> 		</h4>
 				</div>
 				<div class="next-block local-link"><a href="#works"><i class="fa fa-angle-down"></i></a></div>
 			</div>
@@ -112,18 +112,21 @@
 							<div class="image"></div>
 							<div class="description">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui quos odio, aliquid nesciunt totam tempora esse pariatur atque dolore voluptatem.</p>
+								<div class="autor"></div>
 							</div>
 						</div>
 						<div class="testimonial-inner">
 							<div class="image"></div>
 							<div class="description">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui quos odio, aliquid nesciunt totam tempora esse pariatur atque dolore voluptatem.</p>
+								<div class="autor"></div>
 							</div>
 						</div>
 						<div class="testimonial-inner">
 							<div class="image"></div>
 							<div class="description">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui quos odio, aliquid nesciunt totam tempora esse pariatur atque dolore voluptatem.</p>
+								<div class="autor"></div>
 							</div>
 						</div>
 					</div>
@@ -131,8 +134,20 @@
 			</div>
 		</div>
 
-		<div class="contacts page-section" id="contacts">
-			<div class="wrapper"></div>
+		<div class="contact page-section" id="contact">
+			<div class="wrapper section-wrapper">
+				<div class="title">
+					<h1>contact with me</h1>
+				</div>
+				<div class="c-form-wrapper">
+					<form class="c-form" action="#" method="post" autocomplete="on">
+						<input id="posName" name="posName" type="text" placeholder="Name" x-autocompletetype="name" required>
+						<input id="posEmail" name="posEmail" type="text" x-autocompletetype="email" placeholder="Email" required>
+						<textarea id="posText" name="posMessage" placeholder="Messege" wrap="soft" required></textarea>
+						<button>send message</button>
+					</form>
+				</div>
+			</div>
 		</div>
 	</main>
 </body>
@@ -165,4 +180,7 @@
 <link rel="stylesheet" href="css/main.min.css">
 <link rel="stylesheet" href="css/normalize.min.css">
 
+<!-- PHP -->
+
+<?php require 'php/contact.php';?>
 </html>
