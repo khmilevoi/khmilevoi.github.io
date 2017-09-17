@@ -141,9 +141,14 @@
 				</div>
 				<div class="c-form-wrapper">
 					<form class="c-form" action="#" method="post" autocomplete="on">
+
+						<input type="hidden" name="project_name" value="myPortfolio">
+						<input type="hidden" name="admin_email" value="khmilevoi@gmail.com">
+						<input type="hidden" name="form_subject" value="Заявка с портфолио">
+
 						<input id="posName" name="posName" type="text" placeholder="Name" x-autocompletetype="name" required>
 						<input id="posEmail" name="posEmail" type="text" x-autocompletetype="email" placeholder="Email" required>
-						<textarea id="posText" name="posMessage" placeholder="Messege" wrap="soft" required></textarea>
+						<textarea id="posText" name="posMessage" placeholder="Message" wrap="soft" required></textarea>
 						<button>send message</button>
 					</form>
 				</div>
@@ -179,8 +184,4 @@
 <link rel="stylesheet" href="css/media.min.css">
 <link rel="stylesheet" href="css/main.min.css">
 <link rel="stylesheet" href="css/normalize.min.css">
-
-<!-- PHP -->
-
-<?php require 'php/contact.php';?>
 </html>

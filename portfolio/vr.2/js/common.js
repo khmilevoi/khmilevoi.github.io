@@ -103,11 +103,12 @@ $(document).ready(function() {
   });
 
   //E-mail Ajax Send
+  
   $(".c-form").submit(function() { //Change
     var th = $(this);
     $.ajax({
       type: "POST",
-      url: "mail.php", //Change
+      url: "../php/contact.php", //Change
       data: th.serialize()
     }).done(function() {
       alert("Thank you!");
