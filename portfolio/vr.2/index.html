@@ -27,7 +27,7 @@
 					<span class="menu-itm"><a href="#home">						Home					</a></span>
 					<span class="menu-itm"><a href="#works">					Works					</a></span>
 					<span class="menu-itm"><a href="#skills">					Skills				</a></span>
-					<span class="menu-itm"><a href="#testimonilas">		Testimonials	</a></span>
+					<span class="menu-itm"><a href="#testimonials">		Testimonials	</a></span>
 					<span class="menu-itm"><a href="#contact">				Contact			</a></span>
 				</nav>
 			</div>
@@ -100,7 +100,7 @@
 			</div>
 		</div>
 
-		<div class="testimonials page-section" id="testimonilas">
+		<div class="testimonials page-section" id="testimonials">
 			<div class="wrapper section-wrapper">
 				<div class="title">
 					<h1>testimonials</h1>
@@ -140,21 +140,38 @@
 					<h1>contact with me</h1>
 				</div>
 				<div class="c-form-wrapper">
-					<form class="c-form" action="#" method="post" autocomplete="on">
-
-						<input type="hidden" name="project_name" value="myPortfolio">
-						<input type="hidden" name="admin_email" value="khmilevoi@gmail.com">
-						<input type="hidden" name="form_subject" value="Заявка с портфолио">
-
-						<input id="posName" name="posName" type="text" placeholder="Name" x-autocompletetype="name" required>
-						<input id="posEmail" name="posEmail" type="text" x-autocompletetype="email" placeholder="Email" required>
-						<textarea id="posText" name="posMessage" placeholder="Message" wrap="soft" required></textarea>
-						<button>send message</button>
+					<form class="c-form" id="applocation" name="application" action="php/contact.php" method="POST" autocomplete="on">
+						<input id="posName" name="name" type="text" placeholder="Name" x-autocompletetype="name" required>
+						<input id="posEmail" name="email" type="email" x-autocompletetype="email" placeholder="Email" required>
+						<textarea id="posText" name="message" placeholder="Message" wrap="soft" required></textarea>
+						<button class="applicationButton" type="submit" form="application">send message</button>
 					</form>
 				</div>
 			</div>
 		</div>
 	</main>
+
+	<footer class="footer">
+		<div class="wrapper">
+			<div class="social">
+				<div class="vk"><a href="https://vk.com/khmilevoi"><i class="fa fa-vk"></i></a></div>
+				<div class="github"><a href="https://github.com/Satanisto"><i class="fa fa-github"></i></a></div>
+				<div class="dribble"><a href="https://dribbble.com/Satanisto"><i class="fa fa-dribbble"></i></a></div>
+				<div class="gmail"><a href="https://plus.google.com/u/0/109096221779371038076"><i class="fa fa-google-plus"></i></a></div>
+				<div class="facebook"><a href="https://www.facebook.com/profile.php?id=100017306522717"><i class="fa fa-facebook"></i></a></div>
+			</div>
+			<div class="footer-menu-wrapper local-link">
+					<span class="menu-itm"><a href="#home">Home</a></span>
+					<span class="menu-itm"><a href="#works">Works</a></span>
+					<span class="menu-itm"><a href="#skills">Skills</a></span>
+					<span class="menu-itm"><a href="#testimonials">Testimonials</a></span>
+					<span class="menu-itm"><a href="#contact">Contact</a></span>
+				</div>
+			<div class="copyright">
+				<p>©2017 Khmilevoi Alex | Satanisto</p>
+			</div>
+		</div>
+	</footer>
 </body>
 
 <!-- JQuery -->
@@ -184,4 +201,5 @@
 <link rel="stylesheet" href="css/media.min.css">
 <link rel="stylesheet" href="css/main.min.css">
 <link rel="stylesheet" href="css/normalize.min.css">
+
 </html>
