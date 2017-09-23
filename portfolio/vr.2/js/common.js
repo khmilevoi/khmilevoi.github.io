@@ -88,6 +88,10 @@ $(document).ready(function() {
     $(".main-menu-wrapper").toggleClass("activeMenuBtn");
   });
 
+  $(".mobile .menu-itm a").click(function () {
+    $(".main-menu-wrapper").removeClass("activeMenuBtn")
+  });
+
   // Шкалы умений
 
   $(window).scroll(function () {
@@ -100,24 +104,6 @@ $(document).ready(function() {
     } else {
       $(".skill-scale").attr("style", "width:100% !important");
     }
-  });
-
-  //E-mail Ajax Send
-  
-  $(".c-form").submit(function() { //Change
-    var th = $(this);
-    $.ajax({
-      type: "POST",
-      url: "../php/contact.php", //Change
-      data: th.serialize()
-    }).done(function() {
-      alert("Thank you!");
-      setTimeout(function() {
-        // Done Functions
-        th.trigger("reset");
-      }, 1000);
-    });
-    return false;
   });
 
   // Конец

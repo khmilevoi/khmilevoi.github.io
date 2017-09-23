@@ -54,28 +54,40 @@
   0% {
     position: relative;
     visibility: visible;
+    width: 100%;
+    height: auto;
   }
   33.3% {
     position: relative;
     visibility: visible;
+    width: 100%;
+    height: auto;
   }
 
   33.33% {
     position: absolute;
     visibility: hidden;
+    width: 0;
+    height: 0;
   }
   66.6% {
     position: absolute;
     visibility: hidden;
+    width: 0;
+    height: 0;
   }
 
   66.66% {
     position: absolute;
     visibility: hidden;
+    width: 0;
+    height: 0;
   }
   100% {
     position: absolute;
     visibility: hidden;
+    width: 0;
+    height: 0;
   }
 }
 
@@ -85,28 +97,40 @@
   0% {
     position: absolute;
     visibility: hidden;
+    width: 0;
+    height: 0;
   }
   33.3% {
     position: absolute;
     visibility: hidden;
+    width: 0;
+    height: 0;
   }
 
   33.33% {
     position: relative;
     visibility: visible;
+    width: 100%;
+    height: auto;
   }
   66.6% {
     position: relative;
     visibility: visible;
+    width: 100%;
+    height: auto;
   }
 
   66.66% {
     position: absolute;
     visibility: hidden;
+    width: 0;
+    height: 0;
   }
   100% {
     position: absolute;
     visibility: hidden;
+    width: 0;
+    height: 0;
   }
 }
 
@@ -116,27 +140,39 @@
   0% {
     position: absolute;
     visibility: hidden;
+    width: 0;
+    height: 0;
   }
   33.3% {
     position: absolute;
     visibility: hidden;
+    width: 0;
+    height: 0;
   }
 
   33.33% {
     position: absolute;
     visibility: hidden;
+    width: 0;
+    height: 0;
   }
   66.6% {
     position: absolute;
     visibility: hidden;
+    width: 0;
+    height: 0;
   }
 
   66.66% {
     position: relative;
     visibility: visible;
+    width: 100%;
+    height: auto;
   }
   100% {
     position: relative;
     visibility: visible;
+    width: 100%;
+    height: auto;
   }
 }
