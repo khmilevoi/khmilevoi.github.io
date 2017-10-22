@@ -45,7 +45,7 @@ $(document).ready(function() {
   var menu_selector = ".menu-itm-wrapper";
 
   function onScroll(){
-    var scroll_top = $(document).scrollTop() + 80;
+    var scroll_top = $(document).scrollTop();
     $(menu_selector + " a").each(function(){
       var hash = $(this).attr("href");
       var target = $(hash);

@@ -1,38 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Message</title>
-  <meta http-equiv="refresh" content="4; URL=http://index.html">
-</head>
-<body>
-  <?php
+<?php
 
-  $sendto = "khmilevoi@gmail.com";
-  $username = $_POST['name'];
-  $usermail = $_POST['email'];
-  $usermessage = $_POST['message'];
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+$token = "460722809:AAGqFU3rcFyKYbSkgjhcBkEbSBzZFW4xJsw";
+$chat_id = "-192893038";
 
-  $subject = "Новая заявка";
-  $headers = "From: " .strip_tags($usermail). "\r\n";
-  $headers .= "Reply-To: ". strip_tags($usermail) . "\r\n";
-  $headers .= "MIME-Version: 1.0\r\n";
-  $headers .= "Content-Type: text/html;charset=utf-8 \r\n";
+$arr = array(
+  'Имя пользователя: ' = $name,
+  'Email Пользователя: ' = $email,
+  'Сообщение пользователя' = $message
+);
 
-  $msg  = "<html><body style='font-family:Arial,sans-serif;'>";
-  $msg .= "<h2 style='font-weight:bold;border-bottom:1px dotted #ccc;'>Cообщение с сайта портфолио</h2>\r\n";
-  $msg .= "<p><strong>От кого:</strong> ".$username."</p>\r\n";
-  $msg .= "<p><strong>Почта:</strong> ".$usermail."</p>\r\n";
-  $msg .= "<p><strong>Сообщение:</strong> ".$usermessage."</p>\r\n";
-  $msg .= "</body></html>";
+foreach ($arr as $key => $value) {
+  $text .= "<b>".$key."</b>".$value."%0A"
+};
 
-  if(@mail($sendto, $subject, $msg, $headers)) {
-    echo "Спасибо за заявку";
-  } else {
-    echo "Ошибка. Попробуйте еще";
-  }
+$sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}", "r");
 
-  ?>
-
-</body>
-</html>
+if ($sendToTelegram) {
+  echo "Спасибо за заявку!";
+} else {
+  echo "Error";
+}
+?>
