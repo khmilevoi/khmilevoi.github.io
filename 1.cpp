@@ -17,21 +17,21 @@ void sort8(lab obj1, int n)
 	vector<int> arr1;
 	vector<int> arr2;
 	int r = 0, t = 0;
-	// for(int i = 0; i < n; i++)
-	// {
-	// 	if(abs(obj1.arr[i]) <= 1)
-	// 	{
-	// 		arr1[r] = obj1.arr[i];
-	// 		r++;
-	// 	}
-	// 	else
-	// 	{
-	// 		arr2[t] = obj1.arr[i];
-	// 		t++;
-	// 	}
-	// }
+	for(int i = 0; i < n; i++)
+	{
+		if(abs(obj1.arr[i]) <= 1)
+		{
+			arr1[r] = obj1.arr[i];
+			r++;
+		}
+		else
+		{
+			arr2[t] = obj1.arr[i];
+			t++;
+		}
+	}
 
-	// obj1.arr.clear();
+	obj1.arr.clear();
 
 	// for(int i = 0; i < size(arr1); i++)
 	// 	obj1.arr.push_back(arr1[i]);
