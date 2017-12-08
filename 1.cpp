@@ -12,21 +12,21 @@ class  lab
 
 };
 
-void sort8(lab obj1, int n) // это не пашет
+void sort8(lab obj1, int n) 
 {
 	vector<int> arr1;
 	vector<int> arr2;
 	int r = 0, t = 0;
 	for(int i = 0; i < n; i++)
-	{
+	 {
 		if(abs(obj1.arr[i]) <= 1)
 		{
-			arr1[r] = obj1.arr[i];
+			arr1.push_back(obj1.arr[i]);
 			r++;
 		}
 		else
 		{
-			arr2[t] = obj1.arr[i];
+			arr2.push_back(obj1.arr[i]);
 			t++;
 		}
 	}
