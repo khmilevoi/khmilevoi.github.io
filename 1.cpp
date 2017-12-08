@@ -80,7 +80,7 @@ void min8(lab obj1, int n)
 
 }
 
-void sort7(lab obj1, int n)// это пашет через жопу
+void sort7(lab obj1, int n)// это пашет через жопу,мб так надо , мб можно сделать проще 
 {
 	int *array1 = new int [n/2];
 	int *array2 = new int [n/2];
