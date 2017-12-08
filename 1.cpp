@@ -12,7 +12,7 @@ class  lab
 
 };
 
-void sort8(lab obj1, int n)
+void sort8(lab obj1, int n) // это не пашет
 {
 	vector<int> arr1;
 	vector<int> arr2;
@@ -80,7 +80,7 @@ void min8(lab obj1, int n)
 
 }
 
-void neebkn7(lab obj1, int n)
+void sort7(lab obj1, int n)// это пашет через жопу
 {
 	int *array1 = new int [n/2];
 	int *array2 = new int [n/2];
@@ -164,7 +164,7 @@ int main()
 		);
 	max7(obj1, n);
 	sum7(obj1, n);
-	neebkn7(obj1, n);
+	sort7(obj1, n);
 	min8(obj1, n);
 	sum8(obj1, n);
 	sort8(obj1, n);
