@@ -2,7 +2,7 @@
 #include <vector>
 #include <ctime>
 #include <iterator>
-#include <cmath>
+#include <cmath> //если ты это читаешь то я разобрался с этой хуитой
 using namespace std;//лаба апр 7-10 вариантов
 
 class  lab
