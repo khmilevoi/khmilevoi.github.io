@@ -11,6 +11,34 @@ class  lab
 	vector<int> arr;
 
 };
+
+void sum10(lab obj1, int n)
+{
+	int sum = 0;
+	for(int i = 0; i < n; i++)
+		if(obj1.arr[i] == 0)
+		{
+			while(i < n)
+			{
+				sum += abs(obj1.arr[i]);
+				i++;
+			}
+			break;
+		}
+		
+	cout << endl << "Sum10 = " << sum;
+}
+
+void min10(lab obj1, int n)
+{
+	int min = abs(obj1.arr[0]);
+	for(int i = 0; i < n; i++)
+		if(min > abs(obj1.arr[i]))
+			min = abs(obj1.arr[i]);
+
+	cout << endl << "10Min po mod element = " << min;
+}
+
 void chot9(lab obj1, int n)
 {
 	vector<int> arr1;
@@ -128,7 +156,7 @@ void min8(lab obj1, int n)
 }
 
 void sort7(lab obj1, int n)// это пашет через жопу,мб так надо , мб можно сделать проще 
-{
+{							// это на 7 но покатит и на 10 варик если чуть изменить
 	int *array1 = new int [n/2];
 	int *array2 = new int [n/2];
 	int j = 0;
@@ -221,5 +249,7 @@ int main()
 	sum9(obj1, n);
 	chot9(obj1, n);
 
+	min10(obj1, n);
+	sum10(obj1, n);
 	return 0;
 }
