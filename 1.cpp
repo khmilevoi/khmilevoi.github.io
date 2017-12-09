@@ -11,24 +11,71 @@ class  lab
 	vector<int> arr;
 
 };
+void chot9(lab obj1, int n)
+{
+	vector<int> arr1;
+	vector<int> arr2;
+	int max = -100;
+	for(int i = 0; i < n; i++)
+		if(obj1.arr[i] > max)
+			max = obj1.arr[i];
+	cout << endl << "Max = " << max;
+	for(int i = 0; i < n; i++)
+	{
+		if(abs(obj1.arr[i] - max) <= abs(0.2 * max))
+			arr1.push_back(obj1.arr[i]);
+		else 
+			arr2.push_back(obj1.arr[i]);
+	}
+	
+	obj1.arr.clear();
+
+	for(int i = 0; i < size(arr1); i++)
+		obj1.arr.push_back(arr1[i]);
+
+	for(int i = 0; i < size(arr2); i++)
+		obj1.arr.push_back(arr2[i]);
+		
+	cout << endl << "\nV9 otsorterovaniy vector : " << endl;
+	copy( obj1.arr.begin(),   // итератор начала массива
+          obj1.arr.end(),     // итератор конца массива
+          ostream_iterator<int>(cout," ")
+		);
+
+}
+
+void sum9(lab obj1, int n)
+{
+	int sum = 0;
+	for(int i = n - 1; i >= 0; i--)
+		if(obj1.arr[i] < 0)
+		{
+			for(int j = i + 1; j < n; j++)
+				sum += int(obj1.arr[j]);
+			break;
+		}
+	cout << endl << "sum9 = " << sum; 
+}
+
+void kol9(lab obj1, int n)
+{
+	int numb = 0;
+	for(int i = 0; i < n; i++)
+		if(obj1.arr[i] < 3 )
+			numb++;
+	cout << endl << "9Number element what < 3 = " << numb;
+}		
 
 void sort8(lab obj1, int n) 
 {
 	vector<int> arr1;
 	vector<int> arr2;
-	int r = 0, t = 0;
 	for(int i = 0; i < n; i++)
 	 {
 		if(abs(obj1.arr[i]) <= 1)
-		{
 			arr1.push_back(obj1.arr[i]);
-			r++;
-		}
 		else
-		{
 			arr2.push_back(obj1.arr[i]);
-			t++;
-		}
 	}
 
 	obj1.arr.clear();
@@ -165,8 +212,14 @@ int main()
 	max7(obj1, n);
 	sum7(obj1, n);
 	sort7(obj1, n);
+
 	min8(obj1, n);
 	sum8(obj1, n);
 	sort8(obj1, n);
+
+	kol9(obj1, n);
+	sum9(obj1, n);
+	chot9(obj1, n);
+
 	return 0;
 }
