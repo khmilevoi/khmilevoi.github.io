@@ -5,6 +5,7 @@
 #include <iterator>
 #include <algorithm> // max_element(), min_element(), sort() 
 #include <numeric> // accumulate(), 
+#include <cmath>
 #include <windows.h>
 using namespace std;
 
@@ -19,7 +20,7 @@ void main () {
 	int i, j;
 	int amount_el;
 
-	cout << "Âåäèòå êîë. ýë. ìàññèâà: " << ends;
+	cout << "Ð’ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð». ÑÐ». Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << ends;
 	cin >> amount_el;
 
 	vector<int> main_mass;
@@ -34,232 +35,307 @@ void main () {
 
 	//
  
-	cout << "Âàð³àíò 1. Â îäíîâèì³ðíîìó ìàñèâ³, ùî ñêëàäàºòüñÿ ç N åëåìåíò³â, îá÷èñëèòè:" << endl;
-	cout << "- ñóìó â³ä'ºìíèõ åëåìåíò³â ìàñèâó;" << endl;
-	cout << "- äîáóòîê åëåìåíò³â ìàñèâó, ðîçòàøîâàíèõ ì³æ ìàêñèìàëüíèì ³ ì³í³ìàëüíèìè åëåìåíòàìè;" << endl;
-	cout << "- óïîðÿäêóâàòè åëåìåíòè ìàñèâó çà çðîñòàííÿì." << endl << endl;
+	// cout << "Ð’Ð°Ñ€Ñ–Ð°Ð½Ñ‚ 1. Ð’ Ð¾Ð´Ð½Ð¾Ð²Ð¸Ð¼Ñ–Ñ€Ð½Ð¾Ð¼Ñƒ Ð¼Ð°ÑÐ¸Ð²Ñ–, Ñ‰Ð¾ ÑÐºÐ»Ð°Ð´Ð°Ñ”Ñ‚ÑŒÑÑ Ð· N ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ–Ð², Ð¾Ð±Ñ‡Ð¸ÑÐ»Ð¸Ñ‚Ð¸:" << endl;
+	// cout << "- ÑÑƒÐ¼Ñƒ Ð²Ñ–Ð´'Ñ”Ð¼Ð½Ð¸Ñ… ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ–Ð² Ð¼Ð°ÑÐ¸Ð²Ñƒ;" << endl;
+	// cout << "- Ð´Ð¾Ð±ÑƒÑ‚Ð¾Ðº ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ–Ð² Ð¼Ð°ÑÐ¸Ð²Ñƒ, Ñ€Ð¾Ð·Ñ‚Ð°ÑˆÐ¾Ð²Ð°Ð½Ð¸Ñ… Ð¼Ñ–Ð¶ Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð¸Ð¼ Ñ– Ð¼Ñ–Ð½Ñ–Ð¼Ð°Ð»ÑŒÐ½Ð¸Ð¼Ð¸ ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°Ð¼Ð¸;" << endl;
+	// cout << "- ÑƒÐ¿Ð¾Ñ€ÑÐ´ÐºÑƒÐ²Ð°Ñ‚Ð¸ ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¸ Ð¼Ð°ÑÐ¸Ð²Ñƒ Ð·Ð° Ð·Ñ€Ð¾ÑÑ‚Ð°Ð½Ð½ÑÐ¼." << endl << endl;
 
 
-	// 1
+	// // 1
 
-	vector<int> neg_num;
+	// vector<int> neg_num;
 
-	for(i = 0; i < amount_el; i++) {
-		if(main_mass[i] < 0) {
-			copy(main_mass.begin() + i, main_mass.begin() + i + 1, back_inserter(neg_num));
-		}
-	}
-
-	cout << "Ðåçóëüòàò 1: " << accumulate(neg_num.begin(), neg_num.end(), 0) << endl << endl;
-
-	// 2
-
-	int max_i, min_i;
-
-	auto max_el = max_element(main_mass.begin(), main_mass.end());
-	auto min_el = min_element(main_mass.begin(), main_mass.end());
-	cout << "Ìàêñèìàëüíûé ýë.: " << *max_el << endl << "Ìèíèìàëüíûé ýë.: " << *min_el << endl;
-	for(i = 0; i < amount_el; i++) {
-		if(main_mass[i] == *max_el) {
-			max_i = i;
-		} else if(main_mass[i] == *min_el) {
-			min_i = i;
-		}
-	}
-	if(max_i > min_i) {
-		auto res = accumulate(min_el, max_el, 0);
-		cout << "Ðåçóëüòàò 2: " << res - *min_el;		
-	} else if(max_i < min_i){
-		auto res = accumulate(max_el, min_el, 0);		
-		cout << "Ðåçóëüòàò 2: " << res - *max_el;
-	}
-
-	cout << endl;
-	
-	// 3
-
-	vector<int> sort_mass;
-	sort_mass.reserve(amount_el);
-	copy(main_mass.begin(), main_mass.end(), back_inserter(sort_mass));
-
-	sort(sort_mass.begin(), sort_mass.end());
-	cout << "Ðåçóëüòàò 3: ";
-	copy(sort_mass.begin(), sort_mass.end(), ostream_iterator<int>(cout, " "));	
-
-	cout << endl << endl;
-
-	// 
-
-	cout << "Âàð³àíò 2. Â îäíîâèì³ðíîìó ìàñèâ³, ùî ñêëàäàºòüñÿ ç N åëåìåíò³â, îá÷èñëèòè:" << endl;
-	cout << "- ñóìó ïîçèòèâíèõ åëåìåíò³â ìàñèâó;" << endl;
-	cout << "- äîáóòîê åëåìåíò³â ìàñèâó, ðîçòàøîâàíèõ ì³æ ìàêñèìàëüíèì çà ìîäóëåì òà ì³í³ìàëüíèì çà ìîäóëåì åëåìåíòàìè;" << endl;
-	cout << "- óïîðÿäêóâàòè åëåìåíòè ìàñèâó çà ñïàäàííÿì." << endl << endl;
-
-	// 1
-
-	vector<int> pos_num;
-
-	for(i = 0; i < amount_el; i++) {
-		if(main_mass[i] > 0) {
-			copy(main_mass.begin() + i, main_mass.begin() + i + 1, back_inserter(pos_num));
-		}
-	}
-
-	cout << "Ðåçóëüòàò 1: " << accumulate(pos_num.begin(), pos_num.end(), 0) << endl << endl;
-
-	// 2
-	// int max_i2, max_el22 = 0, min_i2, min_el22 = 0;
-
-	// auto max_el2 = max_element(main_mass.begin(), main_mass.end());
-	// auto min_el2 = min_element(main_mass.begin(), main_mass.end());
-	// if(*max_el2 < 0) {
-	// 	max_el22 = *max_el2 * -1;
-	// } else {
-	// 	max_el22 = *max_el2;
-	// }
-	// if(*min_el2 < 0) {
-	// 	min_el22 = *min_el2 * -1;		
-	// } else {
-	// 	min_el22 = *min_el2;
-	// }
 	// for(i = 0; i < amount_el; i++) {
-	// 	if(main_mass[i] == max_el22) {
-	// 		max_i2 = i;
-	// 	} else if(main_mass[i] == min_el22) {
-	// 		min_i2 = i;
+	// 	if(main_mass[i] < 0) {
+	// 		copy(main_mass.begin() + i, main_mass.begin() + i + 1, back_inserter(neg_num));
 	// 	}
 	// }
-	// cout << "Ìàêñèìàëüíûé ýë.: " << max_el22 << endl << "Ìèíèìàëüíûé ýë.: " << min_el22 << endl;
-	// if(max_i2 > min_i2) {
-	// 	auto res = accumulate(min_el22, max_el22, 0);
-	// 	cout << "Ðåçóëüòàò 2: " << res - min_el22;		
-	// } else if(max_i2 < min_i2){
-	// 	auto res = accumulate(max_el22, min_el22, 0);		
-	// 	cout << "Ðåçóëüòàò 2: " << res - max_el22;
+
+	// cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ 1: " << accumulate(neg_num.begin(), neg_num.end(), 0) << endl << endl;
+
+	// // 2
+
+	// int max_i, min_i;
+
+	// auto max_el = max_element(main_mass.begin(), main_mass.end());
+	// auto min_el = min_element(main_mass.begin(), main_mass.end());
+	// cout << "ÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ ÑÐ».: " << *max_el << endl << "ÐœÐ¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ ÑÐ».: " << *min_el << endl;
+	// for(i = 0; i < amount_el; i++) {
+	// 	if(main_mass[i] == *max_el) {
+	// 		max_i = i;
+	// 	} else if(main_mass[i] == *min_el) {
+	// 		min_i = i;
+	// 	}
+	// }
+	// if(max_i > min_i) {
+	// 	auto res = accumulate(min_el, max_el, 0);
+	// 	cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ 2: " << res - *min_el;		
+	// } else if(max_i < min_i){
+	// 	auto res = accumulate(max_el, min_el, 0);		
+	// 	cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ 2: " << res - *max_el;
+	// } else {
+	// 	auto res = 0;
+	// 	cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ 2: " << res;		
 	// }
 
 	// cout << endl;
-
-	// 3
-
-	vector<int> sort_mass_r;
-	sort_mass_r.reserve(amount_el);
-	copy(main_mass.begin(), main_mass.end(), back_inserter(sort_mass_r));
-
-	sort(sort_mass_r.begin(), sort_mass_r.end());
-	cout << "Ðåçóëüòàò 3: ";
-	reverse_copy(sort_mass_r.begin(), sort_mass_r.end(), ostream_iterator<int>(cout, " "));	
-
-	cout << endl << endl;
-
-	// 
-
-	cout << "Âàð³àíò 3. Â îäíîâèì³ðíîìó ìàñèâ³, ùî ñêëàäàºòüñÿ ç N ö³ëèõ åëåìåíò³â, îá÷èñëèòè:" << endl;
-	cout << "- äîáóòîê åëåìåíò³â ìàñèâó ç ïàðíèìè íîìåðàìè;" << endl;
-	cout << "- ñóìó åëåìåíò³â ìàñèâó, ðîçòàøîâàíèõ ì³æ ïåðøèì ³ îñòàíí³ì íóëüîâèìè åëåìåíòàìè;" << endl;
-	cout << "- ïåðåòâîðèòè ìàñèâ òàêèì ÷èíîì, ùîá ñïî÷àòêó ðîçòàøîâóâàëèñÿ âñ³ äîäàòí³ åëåìåíòè, à ïîò³ì — óñ³ â³ä'ºìí³ (åëåìåíòè, ùî äîð³âíþþòü 0, ââàæàòè äîäàòíèìè)." << endl << endl;
-
-	// 1
-
-	int even_sum = 0;
-
-	for(i = 0; i < amount_el; i++) {
-		if(i % 2 != 0) {
-			even_sum += main_mass[i];
-		}
-	}
-
-	cout << "Ðåçóëüòàò 1: " << even_sum << endl;
-
-	// 2
-
-	int in = 0, out = 0;
-
-	for(i = 0; i < amount_el; i++) {
-		if(main_mass[i] > 0) {
-			in++;
-			break;
-		}
-	}
-
-	for(j = amount_el - 1; j >= 0; j--) {
-		if(main_mass[j] > 0) {
-			out++;
-			break;
-		}
-	}
-
-	out = amount_el - out;
-
-	cout << in << endl << out << endl;
-
-	cout << "Ðåçóëüòàò 2: " << accumulate(main_mass.begin() + in, main_mass.begin() + out, 0) << endl;
-
-	// 3
-	int n = 0;
-	vector<int> new_mass;
-
-	for(i = 0; i < amount_el; i ++) {
-		if(main_mass[i] >= 0) {
-			new_mass.push_back(main_mass[i]);
-			n++;
-		}
-	}
-	for(i = 0; i < amount_el; i++) {
-		if(main_mass[i] < 0) {
-			new_mass.push_back(main_mass[i]);
-		}
-	}
-	cout << "Ðåçóëüòàò 3: ";
-	copy(new_mass.begin(), new_mass.end(), ostream_iterator<int>(cout, " "));
-	cout << endl;
-
-	// 
-
-	cout << "Âàð³àíò 4. Â îäíîâèì³ðíîìó ìàñèâ³, ùî ñêëàäàºòüñÿ ç N åëåìåíò³â, îá÷èñëèòè:";
-	cout << "- ñóìó åëåìåíò³â ìàñèâó ç íåïàðíèìè íîìåðàìè;";
-	cout << "- ñóìó åëåìåíò³â ìàñèâó, ðîçòàøîâàíèõ ì³æ ïåðøèì ³ îñòàíí³ì â³ä'ºìíèìè åëåìåíòàìè;";
-	cout << "- ñòèñíóòè ìàñèâ, âèäàëèâøè ç íüîãî âñ³ åëåìåíòè, ìîäóëü ÿêèõ íå ïåðåâèùóº 1. Åëåìåíòè, ùî çâ³ëüíèëèñÿ â ê³íö³ ìàñèâó, çàïîâíèòè íóëÿìè." << endl;
-
-	// 1
-
-	int even_sum2 = 0;
-
-	for(i = 0; i < amount_el; i++) {
-		if(i % 2 == 0) {
-			even_sum += main_mass[i];
-		}
-	}
-
-	cout << "Ðåçóëüòàò 1: " << even_sum << endl;
-
-	// 2
-
-
-	int in2 = 0, out2 = 0;
-
-	for(i = 0; i < amount_el; i++) {
-		if(main_mass[i] > 0) {
-			in2++;
-		} else {
-			break;
-		}
-	}
-
-	for(j = amount_el - 1; j >= 0; j--) {
-		if(main_mass[j] > 0) {
-			out2++;
-		} else {
-			break;
-		}
-	}
-
-	out2 = amount_el - out2 - 1;
-
-	cout << in2 << endl << out2 << endl;	
-
-	cout << "Ðåçóëüòàò 2: " << accumulate(main_mass.begin() + in2, main_mass.begin() + out2, 0) << endl;
 	
+	// // 3
+
+	// vector<int> sort_mass;
+	// sort_mass.reserve(amount_el);
+	// copy(main_mass.begin(), main_mass.end(), back_inserter(sort_mass));
+
+	// sort(sort_mass.begin(), sort_mass.end());
+	// cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ 3: ";
+	// copy(sort_mass.begin(), sort_mass.end(), ostream_iterator<int>(cout, " "));	
+
+	// cout << endl << endl;
+
+	// // 
+
+	// cout << "Ð’Ð°Ñ€Ñ–Ð°Ð½Ñ‚ 2. Ð’ Ð¾Ð´Ð½Ð¾Ð²Ð¸Ð¼Ñ–Ñ€Ð½Ð¾Ð¼Ñƒ Ð¼Ð°ÑÐ¸Ð²Ñ–, Ñ‰Ð¾ ÑÐºÐ»Ð°Ð´Ð°Ñ”Ñ‚ÑŒÑÑ Ð· N ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ–Ð², Ð¾Ð±Ñ‡Ð¸ÑÐ»Ð¸Ñ‚Ð¸:" << endl;
+	// cout << "- ÑÑƒÐ¼Ñƒ Ð¿Ð¾Ð·Ð¸Ñ‚Ð¸Ð²Ð½Ð¸Ñ… ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ–Ð² Ð¼Ð°ÑÐ¸Ð²Ñƒ;" << endl;
+	// cout << "- Ð´Ð¾Ð±ÑƒÑ‚Ð¾Ðº ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ–Ð² Ð¼Ð°ÑÐ¸Ð²Ñƒ, Ñ€Ð¾Ð·Ñ‚Ð°ÑˆÐ¾Ð²Ð°Ð½Ð¸Ñ… Ð¼Ñ–Ð¶ Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð¸Ð¼ Ð·Ð° Ð¼Ð¾Ð´ÑƒÐ»ÐµÐ¼ Ñ‚Ð° Ð¼Ñ–Ð½Ñ–Ð¼Ð°Ð»ÑŒÐ½Ð¸Ð¼ Ð·Ð° Ð¼Ð¾Ð´ÑƒÐ»ÐµÐ¼ ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°Ð¼Ð¸;" << endl;
+	// cout << "- ÑƒÐ¿Ð¾Ñ€ÑÐ´ÐºÑƒÐ²Ð°Ñ‚Ð¸ ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¸ Ð¼Ð°ÑÐ¸Ð²Ñƒ Ð·Ð° ÑÐ¿Ð°Ð´Ð°Ð½Ð½ÑÐ¼." << endl << endl;
+
+	// // 1
+
+	// vector<int> pos_num;
+
+	// for(i = 0; i < amount_el; i++) {
+	// 	if(main_mass[i] > 0) {
+	// 		copy(main_mass.begin() + i, main_mass.begin() + i + 1, back_inserter(pos_num));
+	// 	}
+	// }
+
+	// cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ 1: " << accumulate(pos_num.begin(), pos_num.end(), 0) << endl << endl;
+
+	// // 2
+
+	// vector<int> main_mass_abs(amount_el);
+
+	// for(i = 0; i < amount_el; i++) {
+	// 	main_mass_abs[i] = abs(main_mass[i]);
+	// }
+
+	// copy(main_mass_abs.begin(), main_mass_abs.end(), ostream_iterator<int>(cout, " "));
+	// cout << endl;
+
+	// int max_i2, min_i2;
+
+	// auto max_el2 = max_element(main_mass_abs.begin(), main_mass_abs.end());
+	// auto min_el2 = min_element(main_mass_abs.begin(), main_mass_abs.end());
+	// cout << "ÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ ÑÐ».: " << *max_el2 << endl << "ÐœÐ¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ ÑÐ».: " << *min_el2 << endl;
+	// for(i = 0; i < amount_el; i++) {
+	// 	if(main_mass_abs[i] == *max_el2) {
+	// 		max_i2 = i;
+	// 	} else if(main_mass_abs[i] == *min_el2) {
+	// 		min_i2 = i;
+	// 	}
+	// }
+	// if(max_i2 > min_i2) {
+	// 	auto res2 = accumulate(min_el, max_el, 0);
+	// 	cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ 2: " << res2 - *min_el2;		
+	// } else if(max_i2 < min_i2){
+	// 	auto res2 = accumulate(max_el, min_el, 0);		
+	// 	cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ 2: " << res2 - *max_el2;
+	// }
+
+
+	// cout << endl;
+
+	// // 3
+
+	// vector<int> sort_mass_r;
+	// sort_mass_r.reserve(amount_el);
+	// copy(main_mass.begin(), main_mass.end(), back_inserter(sort_mass_r));
+
+	// sort(sort_mass_r.begin(), sort_mass_r.end());
+	// cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ 3: ";
+	// reverse_copy(sort_mass_r.begin(), sort_mass_r.end(), ostream_iterator<int>(cout, " "));	
+
+	// cout << endl << endl;
+
+	// // 
+
+	// cout << "Ð’Ð°Ñ€Ñ–Ð°Ð½Ñ‚ 3. Ð’ Ð¾Ð´Ð½Ð¾Ð²Ð¸Ð¼Ñ–Ñ€Ð½Ð¾Ð¼Ñƒ Ð¼Ð°ÑÐ¸Ð²Ñ–, Ñ‰Ð¾ ÑÐºÐ»Ð°Ð´Ð°Ñ”Ñ‚ÑŒÑÑ Ð· N Ñ†Ñ–Ð»Ð¸Ñ… ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ–Ð², Ð¾Ð±Ñ‡Ð¸ÑÐ»Ð¸Ñ‚Ð¸:" << endl;
+	// cout << "- Ð´Ð¾Ð±ÑƒÑ‚Ð¾Ðº ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ–Ð² Ð¼Ð°ÑÐ¸Ð²Ñƒ Ð· Ð¿Ð°Ñ€Ð½Ð¸Ð¼Ð¸ Ð½Ð¾Ð¼ÐµÑ€Ð°Ð¼Ð¸;" << endl;
+	// cout << "- ÑÑƒÐ¼Ñƒ ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ–Ð² Ð¼Ð°ÑÐ¸Ð²Ñƒ, Ñ€Ð¾Ð·Ñ‚Ð°ÑˆÐ¾Ð²Ð°Ð½Ð¸Ñ… Ð¼Ñ–Ð¶ Ð¿ÐµÑ€ÑˆÐ¸Ð¼ Ñ– Ð¾ÑÑ‚Ð°Ð½Ð½Ñ–Ð¼ Ð½ÑƒÐ»ÑŒÐ¾Ð²Ð¸Ð¼Ð¸ ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°Ð¼Ð¸;" << endl;
+	// cout << "- Ð¿ÐµÑ€ÐµÑ‚Ð²Ð¾Ñ€Ð¸Ñ‚Ð¸ Ð¼Ð°ÑÐ¸Ð² Ñ‚Ð°ÐºÐ¸Ð¼ Ñ‡Ð¸Ð½Ð¾Ð¼, Ñ‰Ð¾Ð± ÑÐ¿Ð¾Ñ‡Ð°Ñ‚ÐºÑƒ Ñ€Ð¾Ð·Ñ‚Ð°ÑˆÐ¾Ð²ÑƒÐ²Ð°Ð»Ð¸ÑÑ Ð²ÑÑ– Ð´Ð¾Ð´Ð°Ñ‚Ð½Ñ– ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¸, Ð° Ð¿Ð¾Ñ‚Ñ–Ð¼ â€” ÑƒÑÑ– Ð²Ñ–Ð´'Ñ”Ð¼Ð½Ñ– (ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¸, Ñ‰Ð¾ Ð´Ð¾Ñ€Ñ–Ð²Ð½ÑŽÑŽÑ‚ÑŒ 0, Ð²Ð²Ð°Ð¶Ð°Ñ‚Ð¸ Ð´Ð¾Ð´Ð°Ñ‚Ð½Ð¸Ð¼Ð¸)." << endl << endl;
+
+	// // 1
+
+	// int even_sum = 0;
+
+	// for(i = 0; i < amount_el; i++) {
+	// 	if(i % 2 != 0) {
+	// 		even_sum += main_mass[i];
+	// 	}
+	// }
+
+	// cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ 1: " << even_sum << endl;
+
+	// // 2
+
+	// int in = 0, out = 0;
+
+	// for(i = 0; i < amount_el; i++) {
+	// 	if(main_mass[i] > 0) {
+	// 		in++;
+	// 		break;
+	// 	}
+	// }
+
+	// for(j = amount_el - 1; j >= 0; j--) {
+	// 	if(main_mass[j] > 0) {
+	// 		out++;
+	// 		break;
+	// 	}
+	// }
+
+	// out = amount_el - out;
+
+	// cout << in << endl << out << endl;
+
+	// cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ 2: " << accumulate(main_mass.begin() + in, main_mass.begin() + out, 0) << endl;
+
+	// // 3
+	// int n = 0;
+	// vector<int> new_mass;
+
+	// for(i = 0; i < amount_el; i ++) {
+	// 	if(main_mass[i] >= 0) {
+	// 		new_mass.push_back(main_mass[i]);
+	// 		n++;
+	// 	}
+	// }
+	// for(i = 0; i < amount_el; i++) {
+	// 	if(main_mass[i] < 0) {
+	// 		new_mass.push_back(main_mass[i]);
+	// 	}
+	// }
+	// cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ 3: ";
+	// copy(new_mass.begin(), new_mass.end(), ostream_iterator<int>(cout, " "));
+	// cout << endl;
+
+	// // 
+
+	// cout << "Ð’Ð°Ñ€Ñ–Ð°Ð½Ñ‚ 4. Ð’ Ð¾Ð´Ð½Ð¾Ð²Ð¸Ð¼Ñ–Ñ€Ð½Ð¾Ð¼Ñƒ Ð¼Ð°ÑÐ¸Ð²Ñ–, Ñ‰Ð¾ ÑÐºÐ»Ð°Ð´Ð°Ñ”Ñ‚ÑŒÑÑ Ð· N ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ–Ð², Ð¾Ð±Ñ‡Ð¸ÑÐ»Ð¸Ñ‚Ð¸:" << endl;
+	// cout << "- ÑÑƒÐ¼Ñƒ ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ–Ð² Ð¼Ð°ÑÐ¸Ð²Ñƒ Ð· Ð½ÐµÐ¿Ð°Ñ€Ð½Ð¸Ð¼Ð¸ Ð½Ð¾Ð¼ÐµÑ€Ð°Ð¼Ð¸;" << endl;
+	// cout << "- ÑÑƒÐ¼Ñƒ ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ–Ð² Ð¼Ð°ÑÐ¸Ð²Ñƒ, Ñ€Ð¾Ð·Ñ‚Ð°ÑˆÐ¾Ð²Ð°Ð½Ð¸Ñ… Ð¼Ñ–Ð¶ Ð¿ÐµÑ€ÑˆÐ¸Ð¼ Ñ– Ð¾ÑÑ‚Ð°Ð½Ð½Ñ–Ð¼ Ð²Ñ–Ð´'Ñ”Ð¼Ð½Ð¸Ð¼Ð¸ ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°Ð¼Ð¸;" << endl;
+	// cout << "- ÑÑ‚Ð¸ÑÐ½ÑƒÑ‚Ð¸ Ð¼Ð°ÑÐ¸Ð², Ð²Ð¸Ð´Ð°Ð»Ð¸Ð²ÑˆÐ¸ Ð· Ð½ÑŒÐ¾Ð³Ð¾ Ð²ÑÑ– ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¸, Ð¼Ð¾Ð´ÑƒÐ»ÑŒ ÑÐºÐ¸Ñ… Ð½Ðµ Ð¿ÐµÑ€ÐµÐ²Ð¸Ñ‰ÑƒÑ” 1. Ð•Ð»ÐµÐ¼ÐµÐ½Ñ‚Ð¸, Ñ‰Ð¾ Ð·Ð²Ñ–Ð»ÑŒÐ½Ð¸Ð»Ð¸ÑÑ Ð² ÐºÑ–Ð½Ñ†Ñ– Ð¼Ð°ÑÐ¸Ð²Ñƒ, Ð·Ð°Ð¿Ð¾Ð²Ð½Ð¸Ñ‚Ð¸ Ð½ÑƒÐ»ÑÐ¼Ð¸." << endl << endl;
+
+	// // 1
+
+	// int even_sum2 = 0;
+
+	// for(i = 0; i < amount_el; i++) {
+	// 	if(i % 2 == 0) {
+	// 		even_sum += main_mass[i];
+	// 	}
+	// }
+
+	// cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ 1: " << even_sum << endl;
+
+	// // 2
+
+
+	// int in2 = 0, out2 = 0;
+
+	// for(i = 0; i < amount_el; i++) {
+	// 	if(main_mass[i] >= 0) {
+	// 		in2++;
+	// 	} else {
+	// 		break;
+	// 	}
+	// }
+
+	// for(j = amount_el - 1; j >= 0; j--) {
+	// 	if(main_mass[j] >= 0) {
+	// 		out2++;
+	// 	} else {
+	// 		break;
+	// 	}
+	// }
+
+	// out2 = amount_el - out2 - 1;
+
+	// cout << in2 << endl << out2 << endl;	
+
+	// cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ 2: " << accumulate(main_mass.begin() + in2 + 1, main_mass.begin() + out2 , 0) << endl;
+
+	// // 3
+
+	// int n2 = 0;
+	// vector<int> new_mass2;
+
+	// for(i = 0; i < amount_el; i++) {
+	// 	if(main_mass[i] > 1 || main_mass[i] < -1) {
+	// 		new_mass2.push_back(main_mass[i]);
+	// 	} else {
+	// 		n2++;
+	// 	}
+	// }
+	// for(i = 0; i < n2; i++) {
+	// 	new_mass2.push_back(0);		
+	// }
+	// cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ 3: ";
+	// copy(new_mass2.begin(), new_mass2.end(), ostream_iterator<int>(cout, " "));
+	// cout << endl;
+
+	// // 
+
+	cout << "Ð’Ð°Ñ€Ñ–Ð°Ð½Ñ‚ 5. Ð’ Ð¾Ð´Ð½Ð¾Ð²Ð¸Ð¼Ñ–Ñ€Ð½Ð¾Ð¼Ñƒ Ð¼Ð°ÑÐ¸Ð²Ñ–, Ñ‰Ð¾ ÑÐºÐ»Ð°Ð´Ð°Ñ”Ñ‚ÑŒÑÑ Ð· N ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ–Ð², Ð¾Ð±Ñ‡Ð¸ÑÐ»Ð¸Ñ‚Ð¸:" << endl;
+	cout << "- Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð¸Ð¹ ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð¼Ð°ÑÐ¸Ð²Ñƒ;" << endl;
+	cout << "- ÑÑƒÐ¼Ñƒ ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ–Ð² Ð¼Ð°ÑÐ¸Ð²Ñƒ, Ñ€Ð¾Ð·Ñ‚Ð°ÑˆÐ¾Ð²Ð°Ð½Ð¸Ñ… Ð´Ð¾ Ð¾ÑÑ‚Ð°Ð½Ð½ÑŒÐ¾Ð³Ð¾ Ð´Ð¾Ð´Ð°Ñ‚Ð½Ð¾Ð³Ð¾ ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°;" << endl;
+	cout << "- ÑÑ‚Ð¸ÑÐ½ÑƒÑ‚Ð¸ Ð¼Ð°ÑÐ¸Ð², Ð²Ð¸Ð´Ð°Ð»Ð¸Ð²ÑˆÐ¸ Ð· Ð½ÑŒÐ¾Ð³Ð¾ Ð²ÑÑ– ÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¸, Ð¼Ð¾Ð´ÑƒÐ»ÑŒ ÑÐºÐ¸Ñ… Ð·Ð½Ð°Ñ…Ð¾Ð´Ð¸Ñ‚ÑŒÑÑ Ð² Ñ–Ð½Ñ‚ÐµÑ€Ð²Ð°Ð»Ñ– [a, b]. Ð•Ð»ÐµÐ¼ÐµÐ½Ñ‚Ð¸, Ñ‰Ð¾ Ð·Ð²Ñ–Ð»ÑŒÐ½Ð¸Ð»Ð¸ÑÑ Ð² ÐºÑ–Ð½Ñ†Ñ– Ð¼Ð°ÑÐ¸Ð²Ñƒ, Ð·Ð°Ð¿Ð¾Ð²Ð½Ð¸Ñ‚Ð¸ Ð½ÑƒÐ»ÑÐ¼Ð¸." << endl << endl;
+
+	// 1
+
+	auto max_el5 = max_element(main_mass.begin(), main_mass.end());
+
+	cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ 1: " << *max_el5 << endl;
+
+	// 2
+
+	int n5 = amount_el - 1;
+	vector<int> new_mass5;
+
+	for(i = amount_el - 1; i >= 0; i--) {
+		if(main_mass[i] > 0) {
+			break;
+		}
+		n5--;
+	}
+
+	cout << n5 << endl;
+
+	for(i = 0; i < n5; i++) {
+		new_mass5.push_back(main_mass[i]);
+	}
+
+	cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ 2: " << accumulate(new_mass5.begin(), new_mass5.end(), 0) << endl;
+	
+	// 3
+
+	int n5_3 = 0;
+	int max, min;
+	vector<int> new_mass53;
+
+	for(i = 0; i < amount_el; i++) {
+		if(main_mass[i] > 1 || main_mass[i] < -1) {
+			new_mass53.push_back(main_mass[i]);
+		} else {
+			n5_3++;
+		}
+	}
+	for(i = 0; i < n5_3; i++) {
+		new_mass53.push_back(0);
+	}
+	cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ 3: ";
+	copy(new_mass53.begin(), new_mass53.end(), ostream_iterator<int>(cout, " "));
+	cout << endl;
 
 	cout << endl;
 	system("pause");

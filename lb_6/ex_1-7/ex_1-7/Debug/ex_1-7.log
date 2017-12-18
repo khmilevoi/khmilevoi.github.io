@@ -1,4 +1,4 @@
-﻿Построение начато 09.12.2017 17:22:40.
+﻿Построение начато 18.12.2017 0:02:11.
      1>Проект "D:\university\cppProjects\lb_6\ex_1-7\ex_1-7\ex_1-7.vcxproj" в узле 2 (целевые объекты build).
      1>InitializeBuildStatus:
          Создание "Debug\ex_1-7.unsuccessfulbuild", так как было задано "AlwaysCreate".
@@ -6,7 +6,8 @@
          Для всех выходных данных обновления не требуется.
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\ex_1-7.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "ex_1-7.cpp"
          ex_1-7.cpp
-     1>d:\university\cppprojects\lb_6\ex_1-7\ex_1-7\ex_1-7.cpp(15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+     1>d:\university\cppprojects\lb_6\ex_1-7\ex_1-7\ex_1-7.cpp(16): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+     1>d:\university\cppprojects\lb_6\ex_1-7\ex_1-7\ex_1-7.cpp(20): warning C4101: j: неиспользованная локальная переменная
        ManifestResourceCompile:
          Для всех выходных данных обновления не требуется.
        Link:
@@ -26,4 +27,4 @@
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:01.02
+Затраченное время: 00:00:01.20
