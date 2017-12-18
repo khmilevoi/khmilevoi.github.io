@@ -1,0 +1,20 @@
+﻿Построение начато 28.11.2017 18:27:17.
+     1>Проект "D:\university\cppProjects\lb_5\gl\gl\gl.vcxproj" в узле 2 (целевые объекты build).
+     1>InitializeBuildStatus:
+         Обращение к "Debug\gl.unsuccessfulbuild".
+       ClCompile:
+         Для всех выходных данных обновления не требуется.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\gl.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt gl.cpp
+         gl.cpp
+     1>d:\university\cppprojects\lb_5\gl\gl\gl.cpp(17): error C3861: main1: идентификатор не найден
+     1>d:\university\cppprojects\lb_5\gl\gl\gl.cpp(19): error C3861: main2: идентификатор не найден
+     1>d:\university\cppprojects\lb_5\gl\gl\gl.cpp(21): error C3861: main3: идентификатор не найден
+     1>d:\university\cppprojects\lb_5\gl\gl\gl.cpp(201): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+     1>d:\university\cppprojects\lb_5\gl\gl\gl.cpp(297): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+     1>d:\university\cppprojects\lb_5\gl\gl\gl.cpp(453): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+     1>d:\university\cppprojects\lb_5\gl\gl\gl.cpp(852): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+     1>Построение проекта "D:\university\cppProjects\lb_5\gl\gl\gl.vcxproj" завершено (целевые объекты build) с ошибкой.
+
+СБОЙ построения.
+
+Затраченное время: 00:00:00.69
