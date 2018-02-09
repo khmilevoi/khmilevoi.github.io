@@ -35,9 +35,9 @@
     }
     function game () {  
         GetCookie();
-        // record = +cookieValue;
+        record = +cookieValue;
         document.cookie = "userRecord=" + record + "; ";
-
+        
         pos_x += x_val;
         pos_y += y_val;
 
@@ -109,6 +109,7 @@
 
         context.fillStyle = "#F59179";
         context.fillRect(apple_x * gr_sz, apple_y * gr_sz, gr_sz - 2, gr_sz - 2);
+        GetCookie();
     }
     function keyPush (evt) {
         switch(evt.keyCode) {
