@@ -29,7 +29,7 @@
         GetCookie();
         if (!+record) {
             record = +cookieValue;
-        } else {
+        } else if(+record == 0) {
             record = 0;
         }
         canvas  = document.getElementById("game_snake"),
