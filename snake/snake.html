@@ -26,6 +26,12 @@
     push = 0;
     record;
     window.onload = function () {
+        GetCookie();
+        if (!+record) {
+            record = +cookieValue;
+        } else {
+            record = 0;
+        }
         canvas  = document.getElementById("game_snake"),
         canvas.width = 400,
         canvas.height = 400,
@@ -33,11 +39,9 @@
         document.addEventListener("keydown", keyPush); 
         setInterval(game, 1000/speed);
     }
-    function game () {  
-        GetCookie();
+    function game () {   
         record = +cookieValue;
-        document.cookie = "userRecord=" + record + "; ";
-        
+
         pos_x += x_val;
         pos_y += y_val;
 
@@ -89,6 +93,7 @@
             record = score;
         }
         document.getElementById("record").innerHTML = "<span>Record: " + record + "</span>"; 
+        document.cookie = "userRecord=" + record + "; ";
 
         // apple
 
@@ -109,7 +114,6 @@
 
         context.fillStyle = "#F59179";
         context.fillRect(apple_x * gr_sz, apple_y * gr_sz, gr_sz - 2, gr_sz - 2);
-        GetCookie();
     }
     function keyPush (evt) {
         switch(evt.keyCode) {
