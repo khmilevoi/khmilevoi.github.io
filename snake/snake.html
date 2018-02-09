@@ -22,11 +22,9 @@
     tail = 2;
     score = 0,
     record;
-    if (+record == NaN) {
-        record = 0;
-    }
     speed = 10;
     push = 0;
+    record = 0;
     window.onload = function () {
         canvas  = document.getElementById("game_snake"),
         canvas.width = 400,
@@ -38,6 +36,7 @@
     function game () {
         cookie();        
         record = +cookieValue;
+
         pos_x += x_val;
         pos_y += y_val;
 
