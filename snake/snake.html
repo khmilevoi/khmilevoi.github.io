@@ -25,6 +25,8 @@
     speed = 10;
     push = 0;
     window.onload = function () {
+        cookie();
+        record = +cookieValue;
         canvas  = document.getElementById("game_snake"),
         canvas.width = 400,
         canvas.height = 400,
@@ -104,9 +106,6 @@
 
         context.fillStyle = "#F59179";
         context.fillRect(apple_x * gr_sz, apple_y * gr_sz, gr_sz - 2, gr_sz - 2);
-
-        cookie();
-
     }
     function keyPush (evt) {
         switch(evt.keyCode) {
@@ -189,6 +188,5 @@
             return "";
         };
         cookieValue = getCookie(cookieName);
-        // record = +cookieValue;
     }
 </script>
