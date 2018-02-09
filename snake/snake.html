@@ -24,8 +24,14 @@
     record;
     speed = 10;
     push = 0;
-    record = 0;
+    record;
     window.onload = function () {
+        GetCookie();
+        if (!+record) {
+            record = +cookieValue;
+        } else {
+            record = 0;
+        }
         canvas  = document.getElementById("game_snake"),
         canvas.width = 400,
         canvas.height = 400,
@@ -33,8 +39,7 @@
         document.addEventListener("keydown", keyPush); 
         setInterval(game, 1000/speed);
     }
-    function game () {
-        cookie();        
+    function game () {   
         record = +cookieValue;
 
         pos_x += x_val;
@@ -87,6 +92,7 @@
         if (record <= score) {
             record = score;
             document.getElementById("record").innerHTML = "<span>Record: " + record + "</span>"; 
+            document.cookie = "userRecord=" + record + "; ";
         }
 
         // apple
@@ -171,8 +177,7 @@
         }
     }
 
-    function cookie() {
-        document.cookie = "userRecord=" + record + "; ";
+    function GetCookie() {
         var cookieName = "userRecord";
         function getCookie (cookieName) {
             var name = cookieName + "=";
