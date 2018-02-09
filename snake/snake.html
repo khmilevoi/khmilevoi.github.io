@@ -84,7 +84,6 @@
             record = score;
             document.getElementById("record").innerHTML = "<span>Record: " + record + "</span>"; 
         }
-        document.cookie = "userRecord=" + record;
 
         // apple
 
@@ -105,6 +104,8 @@
 
         context.fillStyle = "#F59179";
         context.fillRect(apple_x * gr_sz, apple_y * gr_sz, gr_sz - 2, gr_sz - 2);
+
+        cookie();
 
     }
     function keyPush (evt) {
@@ -167,5 +168,9 @@
             console.log(push);
             console.log("");
         }
+    }
+
+    cookie() {
+        document.cookie = "userRecord=" + 500;
     }
 </script>
