@@ -35,11 +35,8 @@
     }
     function game () {  
         GetCookie();
-        if (!+record) {
-            record = +cookieValue;
-        } else {
-            record = 0;
-        } 
+        record = ++cookieValue
+        document.cookie = "userRecord=" + record + "; ";
 
         pos_x += x_val;
         pos_y += y_val;
@@ -92,7 +89,6 @@
             record = score;
         }
         document.getElementById("record").innerHTML = "<span>Record: " + record + "</span>"; 
-        document.cookie = "userRecord=" + record + "; ";
 
         // apple
 
