@@ -167,6 +167,7 @@ function gameOver() {
     tail = 2;
     score = 0;
     push = 0;
+    console.log("gameover");
 }
 
 function GetCookie() {
