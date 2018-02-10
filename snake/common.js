@@ -165,7 +165,12 @@ function gameOver() {
     document.getElementById("your_score").innerHTML = "Your score: " + score;  
     document.getElementById("gameover").style.display = "flex";  
     console.log("game over");
-    gameover = true;
+    gameover = true; 
+}
+
+function reload() {
+    gameover = false;
+    document.getElementById("gameover").style.display = "none";      
     x_val = 0,
     y_val = 0;
     pos_x = 20,
@@ -174,12 +179,7 @@ function gameOver() {
     apple_y = 15;
     tail = 1;
     score = 0;
-    push = 0; 
-}
-
-function reload() {
-    gameover = false;
-    document.getElementById("gameover").style.display = "none";      
+    push = 0;
 }
 
 function GetCookie() {
