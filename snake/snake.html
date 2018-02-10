@@ -24,8 +24,12 @@
         mysql_query("CREATE TABLE scoreSnake (
             id INT,
             playerName CHAR,
-            score INT 
+            record INT 
+            PRIMARY KEY(id)
         )") or die(mysql_error());
+
+        $person = "INSERT INTO satSnake(id, playerName, record) VALUES('1', 'Alex', '15')";
+        mysql_query($person) or die(mysql_error());
 
         mysql_close();
     ?>
