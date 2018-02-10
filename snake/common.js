@@ -2,17 +2,12 @@ x_val = 0,
 y_val = 0;
 pos_x = 20,
 pos_y = 20;
-gr_sz = 20,
-tl_ct = 20;
+gr_sz = 20;
 apple_x = 15,
 apple_y = 15;
-train = [];
 tail = 2;
-score = 0,
-record;
-speed = 10;
+score = 0;
 push = 0;
-record;
 window.onload = function () {
     canvas  = document.getElementById("game_snake"),
     canvas.width = 400,
@@ -87,8 +82,7 @@ function game () {
 
     for (i = 0; i < train.length - 1; i++) {
         if (train[tail - 1].x == train[i].x && train[tail - 1].y == train[i].y) {
-            tail = 2;
-            score = 0;
+            gameOver();
         }
     }
     document.getElementById("score").innerHTML = "<span>Score: " + score + "</span>";            
@@ -161,6 +155,18 @@ function keyPush (evt) {
     if (evt.keyCode) {
         console.log(push);
     }
+}
+
+function gameOver() {
+    x_val = 0,
+    y_val = 0;
+    pos_x = 20,
+    pos_y = 20;
+    apple_x = 15,
+    apple_y = 15;
+    tail = 2;
+    score = 0;
+    push = 0;
 }
 
 function GetCookie() {
