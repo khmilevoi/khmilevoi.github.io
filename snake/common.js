@@ -82,6 +82,14 @@ function game () {
         console.log(train, apple_x * gr_sz, apple_y * gr_sz);
     }
 
+    // record
+
+    if (record <= score) {
+        record = score;
+    }
+    document.getElementById("record").innerHTML = "<span>Record: " + record + "</span>"; 
+    document.cookie = "userRecord=" + record + "; ";
+    
     // score
 
     for (i = 0; i < train.length - 1; i++) {
@@ -91,13 +99,6 @@ function game () {
     }
     document.getElementById("score").innerHTML = "<span>Score: " + score + "</span>";            
 
-    // record
-
-    if (record <= score) {
-        record = score;
-    }
-    document.getElementById("record").innerHTML = "<span>Record: " + record + "</span>"; 
-    document.cookie = "userRecord=" + record + "; ";
 }
 
 function keyPush (evt) {
@@ -171,8 +172,8 @@ function gameOver() {
 }
 
 function reload() {
-    gameover = false;
     document.getElementById("gameover").style.display = "none";      
+    gameover = false;
     pos_x = 20,
     pos_y = 20;
     apple_x = 15,
