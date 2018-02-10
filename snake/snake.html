@@ -35,7 +35,7 @@
     }
     function game () {   
         GetCookie();
-        if (isNaN(record)) {
+        if (!isNaN(record)) {
             record = +cookieValue;
         } else {
             record = 0;
