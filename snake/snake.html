@@ -1,14 +1,23 @@
-<div id="game">
-    <canvas id = "game_snake"></canvas>
-    <div id="information">
-        <div id="score"><span>Score: 0</span></div>
-        <div id="record"><span>Record: 0</span></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake</title>
+</head>
+<body>
+    <div id="game">
+        <canvas id = "game_snake"></canvas>
+        <div id="information">
+            <div id="score"><span>Score: 0</span></div>
+            <div id="record"><span>Record: 0</span></div>
+        </div>
     </div>
-</div>
-<style>
-    html, body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; font-family: Arial; overflow: hidden; }
-    #information { width: 400px; height: auto; display: flex; justify-content: space-between; }
-</style>
+    <style>
+        * { box-sizing: border-box; }
+        html, body { width: 100vw; height: 100vh; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; font-family: Arial; overflow: hidden; }
+        #information { width: 400px; height: auto; padding: 1.5px 3px; font-size: 20px; display: flex; justify-content: space-between; background-color: #f1f1f1; color: silver; }
+    </style>
+</body>
 <script>
     x_val = 0,
     y_val = 0;
@@ -26,6 +35,9 @@
     push = 0;
     record;
     window.onload = function () {
+        // document.innerHTML = "
+        
+        // ";
         canvas  = document.getElementById("game_snake"),
         canvas.width = 400,
         canvas.height = 400,
@@ -196,3 +208,4 @@
         cookieValue = getCookie(cookieName);
     }
 </script>
+</html>
