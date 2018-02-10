@@ -166,13 +166,13 @@ function gameOver() {
     document.getElementById("gameover").style.display = "flex";  
     console.log("game over");
     gameover = true; 
+    x_val = 0,
+    y_val = 0;
 }
 
 function reload() {
     gameover = false;
     document.getElementById("gameover").style.display = "none";      
-    x_val = 0,
-    y_val = 0;
     pos_x = 20,
     pos_y = 20;
     apple_x = 15,
