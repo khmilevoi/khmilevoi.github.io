@@ -31,6 +31,14 @@
         $person = "INSERT INTO satSnake(id, playerName, record) VALUES('1', 'Alex', '15')";
         mysql_query($person) or die(mysql_error());
 
+        mysql_select_db("satSnake") or die(mysql_error());
+        $strSQL = "SELECT * FROM scoreSnake";
+        $rs = mysql_query($strSQL);
+
+        while($row = mysql_fetch_array($rs)) {
+            echo $row['FirstName'] . "<br />";     
+        }
+
         mysql_close();
     ?>
 </body>
