@@ -26,12 +26,6 @@
     push = 0;
     record;
     window.onload = function () {
-        GetCookie();
-        if (isNaN(record)) {
-            record = +cookieValue;
-        } else {
-            record = 0;
-        }
         canvas  = document.getElementById("game_snake"),
         canvas.width = 400,
         canvas.height = 400,
@@ -40,7 +34,12 @@
         setInterval(game, 1000/speed);
     }
     function game () {   
-        record = +cookieValue;
+        GetCookie();
+        if (isNaN(record)) {
+            record = +cookieValue;
+        } else {
+            record = 0;
+        }
 
         pos_x += x_val;
         pos_y += y_val;
@@ -89,12 +88,6 @@
             document.getElementById("score").innerHTML = "<span>Score: " + score + "</span>";            
         }
 
-        if (record < score) {
-            record = score;
-        }
-        document.getElementById("record").innerHTML = "<span>Record: " + record + "</span>"; 
-        document.cookie = "userRecord=" + record + "; ";
-
         // apple
 
         if (apple_x * gr_sz == pos_x && apple_y * gr_sz == pos_y) {
@@ -114,6 +107,12 @@
 
         context.fillStyle = "#F59179";
         context.fillRect(apple_x * gr_sz, apple_y * gr_sz, gr_sz - 2, gr_sz - 2);
+
+        if (record < score) {
+            record = score;
+        }
+        document.getElementById("record").innerHTML = "<span>Record: " + record + "</span>"; 
+        document.cookie = "userRecord=" + record + "; ";
     }
     function keyPush (evt) {
         switch(evt.keyCode) {
