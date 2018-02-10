@@ -17,30 +17,6 @@
         html, body { width: 100vw; height: 100vh; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; font-family: Arial; overflow: hidden; }
         #information { width: 400px; height: auto; padding: 1.5px 3px; font-size: 20px; display: flex; justify-content: space-between; background-color: #f1f1f1; color: silver; }
     </style>
-    <?php
-        mysql_connect("https://satanisto.github.io", "user", "sesame") or die(mysql_error());
-        mysql_query("CREATE DATABASE satSnake") or die(mysql_error());
-
-        mysql_query("CREATE TABLE scoreSnake (
-            id INT,
-            playerName CHAR,
-            record INT 
-            PRIMARY KEY(id)
-        )") or die(mysql_error());
-
-        $person = "INSERT INTO satSnake(id, playerName, record) VALUES('1', 'Alex', '15')";
-        mysql_query($person) or die(mysql_error());
-
-        mysql_select_db("satSnake") or die(mysql_error());
-        $strSQL = "SELECT * FROM scoreSnake";
-        $rs = mysql_query($strSQL);
-
-        while($row = mysql_fetch_array($rs)) {
-            echo $row['playerName'];     
-        }
-
-        mysql_close();
-    ?>
-</body>
+    </body>
 <script src="common.js"></script>
 </html>
