@@ -108,6 +108,10 @@ function game () {
     document.cookie = "userRecord=" + record + "; ";
 }
 
+function reload () {
+    document.getElementById("gameover").style.display = "none";
+}
+
 function keyPush (evt) {
     switch(evt.keyCode) {
         case 37:
