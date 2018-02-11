@@ -27,9 +27,9 @@ function game () {
         record = 0;
     }
 
-    // if (score == 1) {
-    //     tail = 3;
-    // }
+    if (score == 1) {
+        tail = 3;
+    }
 
     pos_x += x_val;
     pos_y += y_val;
@@ -113,6 +113,7 @@ function game () {
 }
 
 function reload () {
+    document.cookie = "userRecord=" + record + "; ";   
     document.getElementById("gameover").style.display = "none";
 }
 
