@@ -28,7 +28,7 @@ function game () {
         record = 0;
     }
 
-    if (score == 0) {
+    if (score == 1) {
         tail = 3;
     }
 
