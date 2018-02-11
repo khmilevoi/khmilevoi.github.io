@@ -3,11 +3,10 @@ y_val = 0;
 pos_x = 20,
 pos_y = 20;
 gr_sz = 20,
-tl_ct = 20;
 apple_x = 15,
 apple_y = 15;
 train = [];
-tail = 2;
+tail = 1;
 score = 0
 speed = 10;
 push = 0;
@@ -26,6 +25,10 @@ function game () {
         record = +cookieValue;
     } else {
         record = 0;
+    }
+
+    if (score == 1) {
+        tail = 3;
     }
 
     pos_x += x_val;
@@ -86,11 +89,8 @@ function game () {
 
     for (i = 0; i < train.length - 1; i++) {
         if (train[tail - 1].x == train[i].x && train[tail - 1].y == train[i].y) {
-            tail = 2;
+            tail = 1;
             score = 0;
-            x_val = 0;
-            y_val = 0;
-            
         }
     }
     document.getElementById("score").innerHTML = "<span>Score: " + score + "</span>";            
@@ -107,12 +107,12 @@ function game () {
 function keyPush (evt) {
     switch(evt.keyCode) {
         case 37:
-            if (push != 39 && tail > 2) {
+            if (push != 39 && tail > 1) {
                 x_val = -gr_sz;
                 y_val = 0;
                 console.log("left");
                 push = 37;
-            } else if (tail == 2) {
+            } else if (tail == 1) {
                 x_val = -gr_sz;
                 y_val = 0;
                 console.log("left");
@@ -121,12 +121,12 @@ function keyPush (evt) {
 
             break;
         case 38:
-            if (push != 40 && tail > 2) {
+            if (push != 40 && tail > 1) {
                 x_val = 0;
                 y_val = -gr_sz;
                 console.log("up");                
                 push = 38;
-            } else if (tail == 2) {
+            } else if (tail == 1) {
                 x_val = 0;
                 y_val = -gr_sz;
                 console.log("up");                
@@ -134,12 +134,12 @@ function keyPush (evt) {
             }
             break;
         case 39:
-            if (push != 37 && tail > 2) {
+            if (push != 37 && tail > 1) {
                 x_val = gr_sz;
                 y_val = 0;
                 console.log("right");
                 push = 39;
-            } else if (tail == 2) {
+            } else if (tail == 1) {
                 x_val = gr_sz;
                 y_val = 0;
                 console.log("right");
@@ -147,12 +147,12 @@ function keyPush (evt) {
             }
             break;
         case 40:
-            if (push != 38 && tail > 2) {
+            if (push != 38 && tail > 1) {
                 x_val = 0;
                 y_val = gr_sz;
                 console.log("down");
                 push = 40;
-            } else if (tail == 2) {
+            } else if (tail == 1) {
                 x_val = 0;
                 y_val = gr_sz;
                 console.log("down");
