@@ -112,10 +112,10 @@ function game () {
     document.cookie = "userRecord=" + record + "; ";
 }
 
-function reload () {
-    document.cookie = "userRecord=" + record + "; ";   
-    document.getElementById("gameover").style.display = "none";
-}
+// function reload () {
+//     document.cookie = "userRecord=" + record + "; ";   
+//     document.getElementById("gameover").style.display = "none";
+// }
 
 function keyPush (evt) {
     switch(evt.keyCode) {
