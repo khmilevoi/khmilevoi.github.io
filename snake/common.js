@@ -104,6 +104,7 @@ function game () {
             x_val = 0;
             y_val = 0;
             document.getElementById("gameover").style.display = "flex";
+            document.getElementById("your_score").innerHTML = "Your score: " + score;
         }
     }
 }
