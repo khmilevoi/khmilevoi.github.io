@@ -2,12 +2,14 @@ x_val = 0,
 y_val = 0;
 pos_x = 20,
 pos_y = 20;
-gr_sz = 20;
+gr_sz = 20,
+tl_ct = 20;
 apple_x = 15,
 apple_y = 15;
 train = [];
 tail = 2;
-score = 0;
+score = 0,
+record;
 speed = 10;
 push = 0;
 record;
@@ -63,14 +65,13 @@ function game () {
     context.fillRect(train[tail - 1].x, train[tail - 1].y, gr_sz - 2, gr_sz - 2);
 
     // apple
-    
+
     context.fillStyle = "#F59179";
     context.fillRect(apple_x * gr_sz, apple_y * gr_sz, gr_sz - 2, gr_sz - 2);
-    
+
     if (apple_x * gr_sz == pos_x && apple_y * gr_sz == pos_y) {
         ++tail;
         ++score;
-        document.getElementById("score").innerHTML = "<span>Score: " + score + "</span>";            
         apple_x = Math.floor((Math.random() * canvas.width) / gr_sz);
         apple_y = Math.floor((Math.random() * canvas.height) / gr_sz);
         for (i = 0; i < train.length - 2; i++) {
@@ -82,6 +83,15 @@ function game () {
         console.log(train, apple_x * gr_sz, apple_y * gr_sz);
     }
 
+    // score
+
+    for (i = 0; i < train.length - 1; i++) {
+        if (train[tail - 1].x == train[i].x && train[tail - 1].y == train[i].y) {
+            tail = 2;
+            score = 0;
+        }
+    }
+    document.getElementById("score").innerHTML = "<span>Score: " + score + "</span>";            
 
     // record
 
@@ -90,16 +100,6 @@ function game () {
     }
     document.getElementById("record").innerHTML = "<span>Record: " + record + "</span>"; 
     document.cookie = "userRecord=" + record + "; ";
-
-    // game over
-
-    for (i = 0; i < train.length - 1; i++) {
-        if (train[tail - 1].x == train[i].x && train[tail - 1].y == train[i].y) {
-            tail = 2;
-            score = 0;
-
-        }
-    }
 }
 
 function keyPush (evt) {
@@ -183,93 +183,3 @@ function GetCookie() {
     };
     cookieValue = getCookie(cookieName);
 }
-
-//    // game over
-
-//    for (i = 0; i < train.length - 1; i++) {
-//     if (train[tail - 1].x == train[i].x && train[tail - 1].y == train[i].y) {
-//         gameover = true;
-//         x_val = 0;
-//         y_val = 0;
-//         console.log("game over");
-//         document.getElementById("gameover").style.display = "flex";
-//         document.getElementById("your_score").innerHTML = "Your score: " + score;
-//     }
-// }
-// }
-
-// function reload () {
-// gameover = false;
-// tail = 1;
-// score = 0;
-// x_val = 0,
-// y_val = 0;
-// pos_x = 20,
-// pos_y = 20;
-// apple_x = 15,
-// apple_y = 15;    
-// document.getElementById("gameover").style.display = "none";
-// }
-
-// function keyPush (evt) {
-// if (gameover == false) {
-//     switch(evt.keyCode) {
-//         case 37:
-//             if (push != 39 && tail > 1) {
-//                 x_val = -gr_sz;
-//                 y_val = 0;
-//                 console.log("left");
-//                 push = 37;
-//             } else if (tail == 1) {
-//                 x_val = -gr_sz;
-//                 y_val = 0;
-//                 console.log("left");
-//                 push = 37;
-//             }
-
-//             break;
-//         case 38:
-//             if (push != 40 && tail > 1) {
-//                 x_val = 0;
-//                 y_val = -gr_sz;
-//                 console.log("up");                
-//                 push = 38;
-//             } else if (tail == 1) {
-//                 x_val = 0;
-//                 y_val = -gr_sz;
-//                 console.log("up");                
-//                 push = 38;
-//             }
-//             break;
-//         case 39:
-//             if (push != 37 && tail > 1) {
-//                 x_val = gr_sz;
-//                 y_val = 0;
-//                 console.log("right");
-//                 push = 39;
-//             } else if (tail == 1) {
-//                 x_val = gr_sz;
-//                 y_val = 0;
-//                 console.log("right");
-//                 push = 39;                    
-//             }
-//             break;
-//         case 40:
-//             if (push != 38 && tail > 1) {
-//                 x_val = 0;
-//                 y_val = gr_sz;
-//                 console.log("down");
-//                 push = 40;
-//             } else if (tail == 1) {
-//                 x_val = 0;
-//                 y_val = gr_sz;
-//                 console.log("down");
-//                 push = 40;
-//             }
-//             break;
-//     }
-// }
-// if (evt.keyCode) {
-//     console.log(push);
-// }
-// }
