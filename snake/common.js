@@ -8,8 +8,7 @@ apple_x = 15,
 apple_y = 15;
 train = [];
 tail = 2;
-score = 0,
-record;
+score = 0;
 speed = 10;
 push = 0;
 record;
@@ -89,6 +88,9 @@ function game () {
         if (train[tail - 1].x == train[i].x && train[tail - 1].y == train[i].y) {
             tail = 2;
             score = 0;
+            x_val = 0;
+            y_val = 0;
+            
         }
     }
     document.getElementById("score").innerHTML = "<span>Score: " + score + "</span>";            
