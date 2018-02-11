@@ -100,12 +100,12 @@ function game () {
 
     for (i = 0; i < train.length - 1; i++) {
         if (train[tail - 1].x == train[i].x && train[tail - 1].y == train[i].y) {
-            gameover = true;
-            x_val = 0;
-            y_val = 0;
-            console.log("game over");
-            document.getElementById("gameover").style.display = "flex";
-            document.getElementById("your_score").innerHTML = "Your score: " + score;
+            // gameover = true;
+            // x_val = 0;
+            // y_val = 0;
+            // console.log("game over");
+            // document.getElementById("gameover").style.display = "flex";
+            // document.getElementById("your_score").innerHTML = "Your score: " + score;
         }
     }
 }
