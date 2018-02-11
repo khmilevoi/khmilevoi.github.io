@@ -2,12 +2,13 @@ x_val = 0,
 y_val = 0;
 pos_x = 20,
 pos_y = 20;
-gr_sz = 20;
+gr_sz = 20,
+tl_ct = 20;
 apple_x = 15,
 apple_y = 15;
 train = [];
 tail = 2;
-score = 0;
+score = 0
 speed = 10;
 push = 0;
 record;
@@ -25,10 +26,6 @@ function game () {
         record = +cookieValue;
     } else {
         record = 0;
-    }
-
-    if (score == 1) {
-        tail = 3;
     }
 
     pos_x += x_val;
@@ -91,14 +88,9 @@ function game () {
         if (train[tail - 1].x == train[i].x && train[tail - 1].y == train[i].y) {
             tail = 2;
             score = 0;
-            // x_val = 0;
-            // y_val = 0;
-            // pos_x = 20,
-            // pos_y = 20;
-            // apple_x = 15,
-            // apple_y = 15;
-            // document.getElementById("gameover").style.display = "flex";
-            // document.getElementById("your_record").innerHTML = "Your record: " + record;
+            x_val = 0;
+            y_val = 0;
+            
         }
     }
     document.getElementById("score").innerHTML = "<span>Score: " + score + "</span>";            
@@ -111,11 +103,6 @@ function game () {
     document.getElementById("record").innerHTML = "<span>Record: " + record + "</span>"; 
     document.cookie = "userRecord=" + record + "; ";
 }
-
-// function reload () {
-//     document.cookie = "userRecord=" + record + "; ";
-//     document.getElementById("gameover").style.display = "none";
-// }
 
 function keyPush (evt) {
     switch(evt.keyCode) {
