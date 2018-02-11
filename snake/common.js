@@ -90,7 +90,11 @@ function game () {
             score = 0;
             x_val = 0;
             y_val = 0;
-            
+            pos_x = 20,
+            pos_y = 20;
+            apple_x = 15,
+            apple_y = 15;
+            document.getElementById("gameover").style.display = "flex";
         }
     }
     document.getElementById("score").innerHTML = "<span>Score: " + score + "</span>";            
