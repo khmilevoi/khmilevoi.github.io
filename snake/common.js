@@ -1,4 +1,3 @@
-gameover = false;
 x_val = 0,
 y_val = 0;
 pos_x = 20,
@@ -7,7 +6,7 @@ gr_sz = 20;
 apple_x = 15,
 apple_y = 15;
 train = [];
-tail = 1;
+tail = 2;
 score = 0;
 speed = 10;
 push = 0;
@@ -26,10 +25,6 @@ function game () {
         record = +cookieValue;
     } else {
         record = 0;
-    }
-
-    if (score == 1) {
-        tail = 3;
     }
 
     pos_x += x_val;
@@ -100,86 +95,68 @@ function game () {
 
     for (i = 0; i < train.length - 1; i++) {
         if (train[tail - 1].x == train[i].x && train[tail - 1].y == train[i].y) {
-            // gameover = true;
-            // x_val = 0;
-            // y_val = 0;
-            // console.log("game over");
-            // document.getElementById("gameover").style.display = "flex";
-            // document.getElementById("your_score").innerHTML = "Your score: " + score;
+            tail = 2;
+            score = 0;
+
         }
     }
 }
 
-// function reload () {
-//     gameover = false;
-//     tail = 1;
-//     score = 0;
-//     x_val = 0,
-//     y_val = 0;
-//     pos_x = 20,
-//     pos_y = 20;
-//     apple_x = 15,
-//     apple_y = 15;    
-//     document.getElementById("gameover").style.display = "none";
-// }
-
 function keyPush (evt) {
-    if (gameover == false) {
-        switch(evt.keyCode) {
-            case 37:
-                if (push != 39 && tail > 1) {
-                    x_val = -gr_sz;
-                    y_val = 0;
-                    console.log("left");
-                    push = 37;
-                } else if (tail == 1) {
-                    x_val = -gr_sz;
-                    y_val = 0;
-                    console.log("left");
-                    push = 37;
-                }
+    switch(evt.keyCode) {
+        case 37:
+            if (push != 39 && tail > 2) {
+                x_val = -gr_sz;
+                y_val = 0;
+                console.log("left");
+                push = 37;
+            } else if (tail == 2) {
+                x_val = -gr_sz;
+                y_val = 0;
+                console.log("left");
+                push = 37;
+            }
 
-                break;
-            case 38:
-                if (push != 40 && tail > 1) {
-                    x_val = 0;
-                    y_val = -gr_sz;
-                    console.log("up");                
-                    push = 38;
-                } else if (tail == 1) {
-                    x_val = 0;
-                    y_val = -gr_sz;
-                    console.log("up");                
-                    push = 38;
-                }
-                break;
-            case 39:
-                if (push != 37 && tail > 1) {
-                    x_val = gr_sz;
-                    y_val = 0;
-                    console.log("right");
-                    push = 39;
-                } else if (tail == 1) {
-                    x_val = gr_sz;
-                    y_val = 0;
-                    console.log("right");
-                    push = 39;                    
-                }
-                break;
-            case 40:
-                if (push != 38 && tail > 1) {
-                    x_val = 0;
-                    y_val = gr_sz;
-                    console.log("down");
-                    push = 40;
-                } else if (tail == 1) {
-                    x_val = 0;
-                    y_val = gr_sz;
-                    console.log("down");
-                    push = 40;
-                }
-                break;
-        }
+            break;
+        case 38:
+            if (push != 40 && tail > 2) {
+                x_val = 0;
+                y_val = -gr_sz;
+                console.log("up");                
+                push = 38;
+            } else if (tail == 2) {
+                x_val = 0;
+                y_val = -gr_sz;
+                console.log("up");                
+                push = 38;
+            }
+            break;
+        case 39:
+            if (push != 37 && tail > 2) {
+                x_val = gr_sz;
+                y_val = 0;
+                console.log("right");
+                push = 39;
+            } else if (tail == 2) {
+                x_val = gr_sz;
+                y_val = 0;
+                console.log("right");
+                push = 39;                    
+            }
+            break;
+        case 40:
+            if (push != 38 && tail > 2) {
+                x_val = 0;
+                y_val = gr_sz;
+                console.log("down");
+                push = 40;
+            } else if (tail == 2) {
+                x_val = 0;
+                y_val = gr_sz;
+                console.log("down");
+                push = 40;
+            }
+            break;
     }
     if (evt.keyCode) {
         console.log(push);
@@ -206,3 +183,93 @@ function GetCookie() {
     };
     cookieValue = getCookie(cookieName);
 }
+
+//    // game over
+
+//    for (i = 0; i < train.length - 1; i++) {
+//     if (train[tail - 1].x == train[i].x && train[tail - 1].y == train[i].y) {
+//         gameover = true;
+//         x_val = 0;
+//         y_val = 0;
+//         console.log("game over");
+//         document.getElementById("gameover").style.display = "flex";
+//         document.getElementById("your_score").innerHTML = "Your score: " + score;
+//     }
+// }
+// }
+
+// function reload () {
+// gameover = false;
+// tail = 1;
+// score = 0;
+// x_val = 0,
+// y_val = 0;
+// pos_x = 20,
+// pos_y = 20;
+// apple_x = 15,
+// apple_y = 15;    
+// document.getElementById("gameover").style.display = "none";
+// }
+
+// function keyPush (evt) {
+// if (gameover == false) {
+//     switch(evt.keyCode) {
+//         case 37:
+//             if (push != 39 && tail > 1) {
+//                 x_val = -gr_sz;
+//                 y_val = 0;
+//                 console.log("left");
+//                 push = 37;
+//             } else if (tail == 1) {
+//                 x_val = -gr_sz;
+//                 y_val = 0;
+//                 console.log("left");
+//                 push = 37;
+//             }
+
+//             break;
+//         case 38:
+//             if (push != 40 && tail > 1) {
+//                 x_val = 0;
+//                 y_val = -gr_sz;
+//                 console.log("up");                
+//                 push = 38;
+//             } else if (tail == 1) {
+//                 x_val = 0;
+//                 y_val = -gr_sz;
+//                 console.log("up");                
+//                 push = 38;
+//             }
+//             break;
+//         case 39:
+//             if (push != 37 && tail > 1) {
+//                 x_val = gr_sz;
+//                 y_val = 0;
+//                 console.log("right");
+//                 push = 39;
+//             } else if (tail == 1) {
+//                 x_val = gr_sz;
+//                 y_val = 0;
+//                 console.log("right");
+//                 push = 39;                    
+//             }
+//             break;
+//         case 40:
+//             if (push != 38 && tail > 1) {
+//                 x_val = 0;
+//                 y_val = gr_sz;
+//                 console.log("down");
+//                 push = 40;
+//             } else if (tail == 1) {
+//                 x_val = 0;
+//                 y_val = gr_sz;
+//                 console.log("down");
+//                 push = 40;
+//             }
+//             break;
+//     }
+// }
+// if (evt.keyCode) {
+//     console.log(push);
+// }
+// }
