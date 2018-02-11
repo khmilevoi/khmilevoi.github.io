@@ -99,6 +99,7 @@ function game () {
             apple_x = 15,
             apple_y = 15;
             document.getElementById("gameover").style.display = "flex";
+            document.getElementById("your_record").innerHTML = "Your record: " + record;
         }
     }
     document.getElementById("score").innerHTML = "<span>Score: " + score + "</span>";            
