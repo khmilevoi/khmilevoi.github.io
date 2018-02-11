@@ -1,4 +1,4 @@
-gameover = false;
+// gameover = false;
 x_val = 0,
 y_val = 0;
 pos_x = 20,
@@ -100,31 +100,31 @@ function game () {
 
     for (i = 0; i < train.length - 1; i++) {
         if (train[tail - 1].x == train[i].x && train[tail - 1].y == train[i].y) {
-            gameover = true;
+            // gameover = true;
             x_val = 0;
             y_val = 0;
-            console.log("game over");
-            document.getElementById("gameover").style.display = "flex";
-            document.getElementById("your_score").innerHTML = "Your score: " + score;
+            // console.log("game over");
+            // document.getElementById("gameover").style.display = "flex";
+            // document.getElementById("your_score").innerHTML = "Your score: " + score;
         }
     }
 }
 
-function reload () {
-    gameover = false;
-    tail = 1;
-    score = 0;
-    x_val = 0,
-    y_val = 0;
-    pos_x = 20,
-    pos_y = 20;
-    apple_x = 15,
-    apple_y = 15;    
-    document.getElementById("gameover").style.display = "none";
-}
+// function reload () {
+//     gameover = false;
+//     tail = 1;
+//     score = 0;
+//     x_val = 0,
+//     y_val = 0;
+//     pos_x = 20,
+//     pos_y = 20;
+//     apple_x = 15,
+//     apple_y = 15;    
+//     document.getElementById("gameover").style.display = "none";
+// }
 
 function keyPush (evt) {
-    if (gameover == false) {
+    // if (gameover == false) {
         switch(evt.keyCode) {
             case 37:
                 if (push != 39 && tail > 1) {
@@ -184,7 +184,7 @@ function keyPush (evt) {
     if (evt.keyCode) {
         console.log(push);
     }
-}
+// }
 
 function GetCookie() {
     var cookieName = "userRecord";
