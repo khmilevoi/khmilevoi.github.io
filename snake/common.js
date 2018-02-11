@@ -2,8 +2,7 @@ x_val = 0,
 y_val = 0;
 pos_x = 20,
 pos_y = 20;
-gr_sz = 20,
-tl_ct = 20;
+gr_sz = 20;
 apple_x = 15,
 apple_y = 15;
 train = [];
@@ -28,9 +27,9 @@ function game () {
         record = 0;
     }
 
-    if (score == 1) {
-        tail = 3;
-    }
+    // if (score == 1) {
+    //     tail = 3;
+    // }
 
     pos_x += x_val;
     pos_y += y_val;
