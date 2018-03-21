@@ -182,8 +182,8 @@ function GetCookie() {
                 c = c.substring(1);
             }
             if (c.indexOf(name) == 0) {
-                return c.substring(name.length);
                 console.log("cookie update");
+                return c.substring(name.length);
             }
         }
         return "";
