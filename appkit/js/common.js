@@ -16,12 +16,8 @@ $(document).ready(function() {
 	//Фиксированное меню
 
 	$(window).scroll(function() {
-		if ($(this).scrollTop() > $(".header").height()) {
-			$("body").addClass("scrolled-header");
-		} else {
-			$("body").removeClass("scrolled-header");
-		}
-
+		if ($(this).scrollTop() > $(".header").height()) $("body").addClass("scrolled-header");
+		else $("body").removeClass("scrolled-header");
 	});
 
 	//Nav-Link
@@ -29,13 +25,14 @@ $(document).ready(function() {
 	// about
 
 	$(window).scroll(function() {
-		if ($(this).scrollTop() < $(".home").height() + $(".about").height()) {
+		if ($(this).scrollTop() < $(".home").height() + $(".about").height() - 50) {
 			$("#home-menu-item-1").addClass("active-link");
 		} else {
 			$("#home-menu-item-1").removeClass("active-link");
-		} if ($(this).scrollTop() < $(".home").height()) {
-			$("#home-menu-item-1").removeClass("active-link");
-		}
+		} 
+		// if ($(this).scrollTop() < $(".home").height()) {
+		// 	$("#home-menu-item-1").removeClass("active-link");
+		// }
 
 	});
 
