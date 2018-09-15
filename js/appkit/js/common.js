@@ -39,7 +39,7 @@ $(document).ready(function() {
 	// testimonials
 
 	$(window).scroll(function() {
-		if ($(this).scrollTop() < $(".home").height() + $(".about").height() + $(".testimonials").height()) {
+		if ($(this).scrollTop() < $(".home").height() + $(".about").height() + $(".testimonials").height() - 50) {
 			$("#home-menu-item-2").addClass("active-link");
 		} else {
 			$("#home-menu-item-2").removeClass("active-link");
@@ -52,7 +52,7 @@ $(document).ready(function() {
 	// features
 
 	$(window).scroll(function() {
-		if ($(this).scrollTop() < $(".home").height() + $(".about").height() + $(".testimonials").height() + $(".features").height()) {
+		if ($(this).scrollTop() < $(".home").height() + $(".about").height() + $(".testimonials").height() + $(".features").height() - 50) {
 			$("#home-menu-item-3").addClass("active-link");
 		} else {
 			$("#home-menu-item-3").removeClass("active-link");
@@ -65,7 +65,7 @@ $(document).ready(function() {
 	// team
 
 	$(window).scroll(function() {
-		if ($(this).scrollTop() < $(".home").height() + $(".about").height() + $(".testimonials").height() + $(".features").height() + $(".team").height()) {
+		if ($(this).scrollTop() < $(".home").height() + $(".about").height() + $(".testimonials").height() + $(".features").height() + $(".team").height() - 50) {
 			$("#home-menu-item-4").addClass("active-link");
 		} else {
 			$("#home-menu-item-4").removeClass("active-link");
@@ -78,7 +78,7 @@ $(document).ready(function() {
 	// pricing
 
 	$(window).scroll(function() {
-		if ($(this).scrollTop() < $(".home").height() + $(".about").height() + $(".testimonials").height() + $(".features").height() + $(".team").height() + $(".pricing").height() / 2) {
+		if ($(this).scrollTop() < $(".home").height() + $(".about").height() + $(".testimonials").height() + $(".features").height() + $(".team").height() + $(".pricing").height() / 2 - 50) {
 			$("#home-menu-item-5").addClass("active-link");
 		} else {
 			$("#home-menu-item-5").removeClass("active-link");
@@ -91,7 +91,7 @@ $(document).ready(function() {
 	// contact
 
 	$(window).scroll(function() {
-		if ($(this).scrollTop() < $(".home").height() + $(".about").height() + $(".testimonials").height() + $(".features").height() + $(".team").height() + $(".pricing").height() + $(".contact").height()) {
+		if ($(this).scrollTop() < $(".home").height() + $(".about").height() + $(".testimonials").height() + $(".features").height() + $(".team").height() + $(".pricing").height() + $(".contact").height() - 50) {
 			$("#home-menu-item-6").addClass("active-link");
 		} else {
 			$("#home-menu-item-6").removeClass("active-link");
