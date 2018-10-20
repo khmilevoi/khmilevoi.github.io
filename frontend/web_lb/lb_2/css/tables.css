@@ -1,0 +1,19 @@
+
+table {
+    width: 100%;
+    text-align: left;
+    border-spacing: 0;
+}
+
+th {
+    color: #419FD9;
+}
+
+table tr:nth-child(2n) {
+    background-color: #F5F5F5;
+}
+
+td,
+th {
+    padding: 10px;
+}

@@ -1,0 +1,10 @@
+h1,
+h2,
+span,
+p {
+    voice-family: paul;
+    stress: 20;
+    richness: 90;
+    volume: medium;
+    speak: normal;
+}
