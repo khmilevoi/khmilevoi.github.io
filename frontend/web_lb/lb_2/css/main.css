@@ -22,9 +22,9 @@ x:-moz-any-link {
     color: blue;
 }
 
-
 h1,
 h2,
+a,
 span,
 p {
     voice-family: paul;
@@ -175,6 +175,8 @@ div.main-menu-wrapper .title {
     text-align: center;
     color: #fff;
     font-size: 25px;
+    display: flex;
+    flex-direction: column;
 }
 
 .face {
@@ -216,4 +218,30 @@ div.main-menu-wrapper .title {
 
 .main-block .additinal {
     color: #4C4D52;
+}
+
+@media (max-width: 920px) {
+    body {
+        flex-direction: column;
+    }
+    body div.main-menu-wrapper {
+        width: 100%;
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    body div.wrapper {
+        width: 100%;
+        flex-direction: column-reverse;
+        margin-left: 0;
+    }
+
+    body div.main-wrapper {
+        width: 100%;
+    }
+
+    body div.sidebar-wrapper {
+        width: 100%;
+    }
 }
