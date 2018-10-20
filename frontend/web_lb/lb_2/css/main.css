@@ -220,7 +220,7 @@ div.main-menu-wrapper .title {
     color: #4C4D52;
 }
 
-@media (max-width: 920px) {
+@media screen and (max-device-width: 1200px) {
     body {
         flex-direction: column;
     }
