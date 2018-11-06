@@ -1,0 +1,13 @@
+div.main-menu-wrapper .title {
+    margin: 20px;
+}
+
+.sidebar-block .title {
+    font-size: 19px;
+    margin: 0 0 15px 0;
+}
+
+.title {
+    color: #419FD9;
+    margin-bottom: 20px;
+}
