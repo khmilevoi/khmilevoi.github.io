@@ -154,6 +154,7 @@ function show_slides(number_of_slide) {
 
     for (let index = 0; index < slides.length; ++index) {
         slides[index].style.display = "none";
+        dots[index].setAttribute("src", slides[index].firstElementChild.getAttribute("src"));
         dots[index].className = dots[index].className.replace(" active", "");
     }
 
@@ -193,14 +194,41 @@ document.getElementsByClassName("close-button")[0].addEventListener("click", () 
 
 for (let index = 0; index < images.length; ++index) {
 
-    images[index].addEventListener("click", () => {
 
-        if (images[index].className.indexOf("pop-up") == -1) {
+    if (images[index].className.indexOf("slider-dots_item")) {
 
-            document.getElementsByClassName("pop-up-wrapper")[0].style.display = "flex";
-            document.body.style.overflow = "hidden";
+        images[index].addEventListener("click", () => {
 
-            document.getElementsByClassName("pop-up-img")[0].setAttribute("src", images[index].getAttribute("src"));
+            if (images[index].className.indexOf("pop-up") == -1) {
+
+                document.getElementsByClassName("pop-up-wrapper")[0].style.display = "flex";
+                document.body.style.overflow = "hidden";
+
+                document.getElementsByClassName("pop-up-img")[0].setAttribute("src", images[index].getAttribute("src"));
+            }
+        });
+    }
+}
+
+delete images;
+
+// Imposible
+
+window.onscroll = (e) => {
+    setTimeout(scrolling, 20);
+}
+
+function scrolling() {
+    if (window.pageYOffset >= 300) {
+        if (document.body.className.indexOf("scrolled") == -1) {
+
+            document.body.classList.toggle("scrolled");
         }
-    });
+    }
+    if (window.pageYOffset < 300) {
+        if (document.body.className.indexOf("scrolled") != -1) {
+
+            document.body.classList.toggle("scrolled");
+        }
+    }
 }
