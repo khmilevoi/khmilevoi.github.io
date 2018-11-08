@@ -195,6 +195,10 @@ th {
   margin: 0 0 15px 0;
 }
 
+body.scrolled .main-wrapper {
+  width: 100%;
+}
+
 body.scrolled .sidebar-wrapper {
   position: fixed;
   top: 0;
@@ -250,6 +254,7 @@ body.scrolled .sidebar-block ul li {
 .main-wrapper {
   width: 720px;
   height: 100%;
+  transition: 0.5s;
 }
 
 .main-block {
@@ -286,7 +291,7 @@ div.main-block:not(.cv):not(.contact-form):not(.slider-wrapper):not(.active):hov
 }
 
 body div.main-block.active {
-  max-height: 1000px !important;
+  max-height: 500px !important;
 }
 
 body div.main-block.active .information {
@@ -343,7 +348,6 @@ body div.main-block.active .information {
   width: 100px;
   margin: 0 10px;
   background-color: var(--border-color);
-  transition: .5s;
 }
 
 .slider-dots_item:hover {
