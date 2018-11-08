@@ -14,6 +14,10 @@ body {
   opacity: 0;
   background-color: var(--back-color);
   font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
 }
 
 a {
@@ -148,7 +152,6 @@ th {
   background-color: #ffffff;
   position: relative;
   display: flex;
-  margin: 30px auto;
   box-shadow: 0px 2px 4px var(--border-color);
 }
 
@@ -197,7 +200,7 @@ body.scrolled .sidebar-wrapper {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 60px;
   border: none;
   display: flex;
   flex-direction: row;
@@ -207,8 +210,7 @@ body.scrolled .sidebar-wrapper {
 body.scrolled .face-name {
   flex-direction: row;
   height: 100%;
-  width: auto;
-  padding: 10px;
+  width: 300px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -217,12 +219,13 @@ body.scrolled .face-name {
 body.scrolled .face {
   width: 40px;
   height: 40px;
-  margin: none;
-  margin-right: 15px;
+  margin: 0 15px 0 0;
 }
 
 body.scrolled .other-informations {
   padding: 0;
+  width: calc(100% - 300px);
+  height: 100%;
 }
 
 body.scrolled .sidebar-block {
@@ -238,6 +241,10 @@ body.scrolled .sidebar-block ul {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+}
+
+body.scrolled .sidebar-block ul li {
+  margin: 0;
 }
 
 .main-wrapper {
