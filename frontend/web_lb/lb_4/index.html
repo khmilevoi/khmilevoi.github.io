@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Khmilevoi Alex</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <section class="pop-up-wrapper">
+        <div class="close-button">
+            <span></span>
+            <span></span>
+        </div>
+        <img class="pop-up-img" src="" alt="">
+    </section>
+    <main class="wrapper">
+        <section class="main-wrapper">
+            <article class="cv main-block unwrap">
+                <h2 class="title">Сайт Хмилевого Алексея</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <strong>Фамилия</strong>
+                        </td>
+                        <td>Хмилевой</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Имя</strong>
+                        </td>
+                        <td>Алексей</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Отчество</strong>
+                        </td>
+                        <td>Сергеевич</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Дата рождения</strong>
+                        </td>
+                        <td>18.01.2000</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Возраст</strong>
+                        </td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Пол</strong>
+                        </td>
+                        <td>Мужской</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Место рождения</strong>
+                        </td>
+                        <td>Украина, Мариуполь</td>
+                    </tr>
+                </table>
+            </article>
+
+            <article id="slider-wrapper" class="slider-wrapper main-block unwrap">
+
+                <h1 class="title">Галлерея</h1>
+
+                <div class="slider">
+                    <div class="item">
+                        <img src="https://images4.alphacoders.com/587/thumb-1920-587777.png" alt="Первый слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="https://magtemplates.com/wp-content/uploads/2017/06/Technology-Programming-Wallpaper.jpg"
+                            alt="Второй слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="https://wallup.net/wp-content/uploads/2017/11/22/342160-programming-code-simple_background-coding-748x421.jpg"
+                            alt="Третий слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="https://tctechcrunch2011.files.wordpress.com/2015/04/codecode.jpg" alt="Первый слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="https://cdn-images-1.medium.com/max/2000/1*7aJPlxn8gwhI7JjcBFr-tQ.jpeg" alt="Второй слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="https://cdn-images-1.medium.com/max/1559/1*iwPLQjyFYRTVeQ2cb4S9rA.png" alt="Третий слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="https://i1.wp.com/geoawesomeness.com/wp-content/uploads/2017/09/Coding-Geospatial.jpg"
+                            alt="Первый слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="https://cdn-images-1.medium.com/max/1600/0*QUqE4WGF8_cC9bIl.jpg" alt="Второй слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="https://cdn-images-1.medium.com/max/2000/1*uFINNsYNbYuPIC3sUMyy6w.jpeg" alt="Первый слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="https://cdn-images-1.medium.com/max/1600/1*6W5eurFhYPpwNbRbqNImgQ.jpeg" alt="Второй слайд">
+                    </div>
+
+                    <div class="item">
+                        <img src="https://www.exploreyork.org.uk/wp-content/uploads/2016/05/July_WhatIsCoding.jpg" alt="Третий слайд">
+                    </div>
+
+                    <a class="prev">
+                        <img class="unpop" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-left-b-512.png"
+                            alt="left">
+                    </a>
+                    <a class="next">
+                        <img class="unpop" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-right-b-128.png"
+                            alt="right">
+                    </a>
+                </div>
+
+                <div class="slider-dots">
+                    <img class="slider-dots_item unpop">
+                    <img class="slider-dots_item unpop">
+                    <img class="slider-dots_item unpop">
+                    <img class="slider-dots_item unpop">
+                    <img class="slider-dots_item unpop">
+                    <img class="slider-dots_item unpop">
+                    <img class="slider-dots_item unpop">
+                    <img class="slider-dots_item unpop">
+                    <img class="slider-dots_item unpop">
+                    <img class="slider-dots_item unpop">
+                    <img class="slider-dots_item unpop">
+                </div>
+            </article>
+
+            <article id="game" class="game main-block unwrap">
+                <h1 class="title">Snake</h1>
+                <div class="game_wrapper">
+                    <canvas width="400px" height="400px" id="game_snake"></canvas>
+                    <div id="information">
+                        <div id="score"><span>Score: 0</span></div>
+                        <div id="record"><span>Record: 0</span></div>
+                    </div>
+                    <div id="gameover" onclick="reload()">
+                        <div id="inner"><span>Game over</span></br><span id="your_score">Your score: 0</span>
+                            <div id="btn_reload"><i class="fas fa-redo-alt"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article id="interests" class="interests main-block">
+                <h1 class="title">Интересы и хобби</h1>
+                <ul class="information">
+                    <li>Программирование</li>
+                    <li>Музыка</li>
+                    <li>Танцы</li>
+                    <li>Спорт</li>
+                    <li>Фильмы</li>
+                    <li>Сериалы</li>
+                    <li>Компьютерные игры</li>
+                </ul>
+            </article>
+
+            <article id="programming-languages" class="programming-languages main-block">
+                <h2 class="title">Известные мне языки программирования</h2>
+                <ul class="information">
+                    <li>C++ <small>(70%)</small></li>
+                    <li>Python <small>(30%)</small></li>
+                    <li>JS <small>(40%)</small></li>
+                </ul>
+            </article>
+
+            <article id="favorite-subjects" class="favorite-subjects main-block">
+                <h2 class="title">Любимые школьные предметы</h2>
+                <ul class="information">
+                    <li>Математика</li>
+                    <li>Черчение</li>
+                </ul>
+            </article>
+
+            <article id="computer" class="computer main-block">
+                <h2 class="title">Выход к компьютеру</h2>
+                <ul class="information">
+                    <li>Есть <small>(круглосуточно)</small></li>
+                </ul>
+            </article>
+
+            <article id="artifical-intelligence" class="artifical-intelligence main-block">
+                <h2 class="title">Что я знаю об искусственном интеллекте</h2>
+                <p class="information">
+                    Термин интеллект (intelligence) происходит от латинского intellectus — что означает ум, рассудок,
+                    разум; мыслительные способности человека.
+                    Соответственно искусственный интеллект (artificial intelligence) — ИИ (AI) обычно толкуется как
+                    свойство автоматических систем брать на себя отдельные функции интеллекта человека, например,
+                    выбирать
+                    и принимать оптимальные решения на основе ранее полученного опыта и рационального анализа внешних
+                    воздействий.
+                </p>
+            </article>
+
+            <article id="future-plans" class="future-plans main-block">
+                <h2 class="title">Мои планы на будущее</h2>
+                <ol class="information">
+                    <li>
+                        <h3>Профессиональные</h3>
+                        <ul>
+                            <li>Стать хорошим программистом.</li>
+                            <li>Получить работу по профессии.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>Образовательные</h3>
+                        <ul>
+                            <li>Стать хорошим программистом.</li>
+                            <li>Закончить университет.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>Житейские</h3>
+                        <ul>
+                            <li>Переехать в квартиру.</li>
+                            <li>Уехать из страны.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </article>
+
+            <article id="education" class="education main-block">
+                <h2 class="title">Образование</h2>
+                <table class="information">
+                    <tr>
+                        <th>Год</th>
+                        <th>Название уч. зав.</th>
+                        <th>Город</th>
+                        <th>Предмет</th>
+                    </tr>
+                    <tr>
+                        <td>2006 - 2012</td>
+                        <td>ООШ №26</td>
+                        <td>Мариуполь</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>2012 - 2017</td>
+                        <td>МГТЛ</td>
+                        <td>Мариуполь</td>
+                        <td>Технический профиль</td>
+                    </tr>
+                    <tr>
+                        <td>2006 - 20016</td>
+                        <td>Школа искусств</td>
+                        <td>Мариуполь</td>
+                        <td>
+                            <ul>
+                                <li>Класс домбры</li>
+                                <li>Класс гитары</li>
+                                <li>Общеэстетическое отделение</li>
+                                <li>Музыкальное отделение</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>c 2017</td>
+                        <td>ХНУРЭ</td>
+                        <td>Харьков</td>
+                        <td>Компьютерные науки</td>
+                    </tr>
+                </table>
+            </article>
+
+            <article id="contact-form" class="contact-form main-block unwrap">
+                <h2 class="title">Связь со мной</h2>
+                <form action="">
+                    <span>Введите имя:</span><br>
+                    <input type="text" name="name" autocomplete="on" required><br>
+
+                    <span>Введите телефон:</span><br>
+                    <input class="contact-phone" type="tel" name="phone" pattern="^[+]{1}[0-9]{2}[(]{1}[0-9]{3}[)]{1}[0-9]{7}$"
+                        autocomplete="on" required><br>
+                    <span class="message-phone"></span>
+
+                    <span>Введите почту:</span><br>
+                    <input class="contact-mail" type="email" name="emailaddress" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9]{2,}(?:[a-z0-9-]*[a-z0-9])?"
+                        autocomplete="on" required><br>
+                    <span class="message-mail"></span>
+
+                    <span>Ваше сообщение:</span><br>
+                    <textarea name="Messege"></textarea>
+
+                    <input class="button" value="Отправить" type="submit" onclick="validation_of_form()">
+                </form>
+            </article>
+        </section>
+
+        <aside class="sidebar-wrapper">
+            <header class="face-name">
+                <img class="face" src="https://satanisto.github.io/frontend/1/img/face.jpg" alt="it is me">
+                <span><strong>Khmilevoi Alex</strong></span>
+            </header>
+            <section class="other-informations">
+                <nav class="main-menu sidebar-block">
+                    <h3 class="title">Меню</h3>
+                    <ul>
+                        <li><a href="#slider-wrapper">
+                                slider-wrapper
+                            </a></li>
+                        <li><a href="#interests">
+                                interests
+                            </a></li>
+                        <li><a href="#programming-languages">
+                                programming-languages
+                            </a></li>
+                        <li><a href="#favorite-subjects">
+                                favorite-subjects
+                            </a></li>
+                        <li><a href="#computer">
+                                computer
+                            </a></li>
+                        <li><a href="#artifical-intelligence">
+                                artifical-intelligence
+                            </a></li>
+                        <li><a href="#future-plans">
+                                future-plans
+                            </a></li>
+                        <li><a href="#education">
+                                education
+                            </a></li>
+                        <li><a href="#contact-form">
+                                contact-form
+                            </a></li>
+                    </ul>
+                </nav>
+                <article class="search sidebar-block">
+                    <h3 class="title">Поиск в Google</h3>
+                    <form action="https://www.google.com.ua/search?">
+                        <p><input type="search" name="q" placeholder="Поиск в Google">
+                            <input class="button" type="submit" value="Найти"></p>
+                    </form>
+                </article>
+                <article class="audio sidebar-block">
+                    <h3 class="title">Audio</h3>
+                    <audio src="http://download-sounds.ru/wp-content/uploads4/2013/01/Windows-Logon-Sound3.mp3"
+                        autoplay="true" controls="true"></audio>
+                </article>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <article class="links footer-block">
+            <h3 class="title">Мои социальные сети</h3>
+            <ul>
+                <li class="mail">Mail: <em><a alt="Mail" title="Mail" target="_blank" href="mailto:Khmilevoi@gmail.com">Khmilevoi@gmail.com</a></em></li>
+                <li class="twitter">Twitter: <em><a alt="Twitter" title="Twitter" target="_blank" href="https://twitter.com/Khmilevoi">@Khmilevoi</a></em></li>
+                <li class="telegram">Telegram: <em><a alt="Telegram" title="Telegram" target="_blank" href="https://t.me/Khmilevoi">@Khmilevoi</a></em></li>
+                <li class="github">GitHub: <em><a alt="GitHub" title="GitHub" target="_blank" href="https://github.com/Satanisto">Satanisto</a></em></li>
+            </ul>
+        </article>
+    </footer>
+    <script src="js/common.js"></script>
+    <script src="js/snake.js"></script>
+</body>
+
+</html>

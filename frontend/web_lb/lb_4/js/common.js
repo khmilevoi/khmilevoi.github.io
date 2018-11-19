@@ -4,9 +4,7 @@ var information_wrapper = document.getElementsByClassName("main-block");
 
 for (let index = 0; index < information_wrapper.length; ++index) {
   if (
-    information_wrapper[index].className.indexOf("cv") == -1 &&
-    information_wrapper[index].className.indexOf("contact-form") == -1 &&
-    information_wrapper[index].className.indexOf("slider-wrapper") == -1
+    information_wrapper[index].className.indexOf("unwrap") == -1
   ) {
     information_wrapper[index].addEventListener("click", () => {
       information_wrapper[index].classList.toggle("active");
@@ -91,7 +89,7 @@ function validation_of_phone() {
 }
 
 function validation_of_mail() {
-  var regular_expression = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi;
+  var regular_expression = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9]{2,}(?:[a-z0-9-]*[a-z0-9])?/gi;
   var validation = regular_expression.test(
     document.getElementsByClassName("contact-mail")[0].value
   );
@@ -138,10 +136,6 @@ for (let index = 0; index < slider_dots.length; ++index) {
   });
 }
 
-// setInterval(() => {
-//   show_slides(current_slide + 1);
-// }, 5000);
-
 function show_slides(number_of_slide) {
   current_slide = number_of_slide;
   var slides = document.getElementsByClassName("item");
@@ -171,10 +165,6 @@ function show_slides(number_of_slide) {
     current_slide * (dots[current_slide - 1].offsetWidth + 20) > (slides[current_slide - 1].offsetWidth / 2) &&
     (dots.length - current_slide) * (dots[current_slide - 1].offsetWidth + 20) > (slides[current_slide - 1].offsetWidth / 2)
   ) {
-    // console.log(current_slide - 1);
-    // console.log((current_slide - 1) * dots[current_slide - 1].offsetWidth);
-    // console.log((slides[current_slide - 1].offsetWidth / 2));
-    // console.log("---");
 
     for (let index = 0; index < dots.length; ++index) {
 
@@ -205,6 +195,7 @@ var opacity = 0;
 var shift = 0.01;
 
 window.onload = () => {
+  draw();
   interval_id = setInterval(() => {
     if (opacity >= 1) {
       clearInterval(interval_id);
@@ -228,9 +219,11 @@ document
   });
 
 for (let index = 0; index < images.length; ++index) {
-  if (images[index].className.indexOf("slider-dots_item")) {
+  if (images[index].className.indexOf("unpop") == -1) {
+
     images[index].addEventListener("click", () => {
       if (images[index].className.indexOf("pop-up") == -1) {
+
         document.getElementsByClassName("pop-up-wrapper")[0].style.display =
           "flex";
         document.body.style.overflow = "hidden";
@@ -255,7 +248,7 @@ function scrolling() {
   if (
     window.pageYOffset >=
     document.getElementsByClassName("face-name")[0].offsetTop +
-    document.getElementsByClassName("face-name")[0].offsetHeight + 200
+    document.getElementsByClassName("face-name")[0].offsetHeight + document.getElementsByClassName("other-informations")[0].offsetHeight
   ) {
     if (document.body.className.indexOf("scrolled") == -1) {
       document.body.classList.toggle("scrolled");
@@ -265,7 +258,7 @@ function scrolling() {
   if (
     window.pageYOffset <
     document.getElementsByClassName("face-name")[0].offsetTop +
-    document.getElementsByClassName("face-name")[0].offsetHeight + 200
+    document.getElementsByClassName("face-name")[0].offsetHeight + document.getElementsByClassName("other-informations")[0].offsetHeight
   ) {
 
     if (document.body.className.indexOf("scrolled") != -1) {
