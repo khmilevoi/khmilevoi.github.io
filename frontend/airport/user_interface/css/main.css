@@ -1,0 +1,455 @@
+* {
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+input,
+select {
+  width: 100%;
+  height: 25px;
+  margin: 0 5px;
+  padding: 5px 12px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+option {
+  font-weight: normal;
+  display: block;
+  white-space: pre;
+  min-height: auto;
+  padding: 0;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  border: 1px solid #8fbe6b;
+  padding: 6px 12px;
+  margin: 0 5px;
+  border-radius: 4px;
+  background-color: #5b9d32;
+  color: white;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 15px;
+  color: #999999;
+}
+
+table {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.alert {
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  margin: 30px;
+  position: fixed;
+  padding: 15px 30px;
+  z-index: 999;
+  background-color: #5b9d32;
+  border-radius: 4px;
+  animation: alert 2.5s ease alternate-reverse 2;
+  display: none;
+  color: white;
+}
+
+@keyframes alert {
+  0%,
+  60% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  max-width: 900px;
+  padding: 15px;
+  margin: 0 auto 0 auto;
+}
+
+.pop-up {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: none;
+}
+
+.pop-up.show {
+  display: flex;
+}
+
+.pop-up #close-btn {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pop-up #close-btn span {
+  width: 100%;
+  height: 5px;
+  display: block;
+  position: absolute;
+  background-color: white;
+}
+
+.pop-up #close-btn span:first-child {
+  transform: rotate(45deg);
+}
+
+.pop-up #close-btn span:last-child {
+  transform: rotate(-45deg);
+}
+
+.pop-up-registration form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pop-up-registration input,
+.pop-up-registration button {
+  width: 50%;
+  height: 50px;
+  margin: 10px 0;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: #eff0f1;
+}
+
+.navbar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name-of-airport {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.name-of-airport img {
+  height: 50px;
+}
+
+.login {
+  width: 50%;
+  height: 100%;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login form > * {
+  width: 100%;
+  height: 50%;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.login input {
+  width: 100%;
+  height: 100%;
+}
+
+.login button {
+  width: 100%;
+  height: 100%;
+}
+
+.login .users-name button {
+  width: auto;
+  height: auto;
+  padding: 2px;
+  margin-left: 15px;
+}
+
+.login .users-name img {
+  width: 30px;
+  fill: white;
+}
+
+.users-name {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #5b9d32;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/*  */
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+.nav-div {
+  width: 100%;
+  height: 50px;
+  display: flex;
+}
+
+.nav-div > span {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  background-color: #eff0f1;
+  color: #999999;
+}
+
+.nav-div img {
+  width: 20px;
+  margin: 0px 15px;
+  cursor: pointer;
+}
+
+.nav-div span.active {
+  background-color: white;
+  color: black;
+}
+
+.content-div {
+  width: 100%;
+  height: 100%;
+}
+
+.content-div > div {
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+}
+
+.content-div > div.active {
+  display: flex;
+}
+
+.search-field {
+  width: 100%;
+}
+
+.search-field form {
+  width: 100%;
+  height: 100%;
+  /* margin: 15px; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.search-field form input,
+.search-field form select,
+.search-field form button {
+  height: 30px;
+  margin: 5px 5px;
+  padding: 5px 15px;
+}
+
+.radio input[type="radio"] {
+  display: none;
+}
+
+.radio {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #a2a2a2;
+  border-radius: 26px;
+  color: black;
+  background-color: white;
+}
+
+.radio label {
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 26px;
+}
+
+.radio input:checked + label {
+  background-color: #5b9d32;
+  color: white;
+}
+
+.flights {
+  width: 100%;
+}
+
+.flight {
+  width: 100%;
+  padding: 30px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #5b9d32;
+}
+
+.flight > div {
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.flight .buying {
+  width: 50%;
+  justify-content: flex-end;
+  page-break-after: always;
+  white-space: nowrap;
+}
+
+.flight .buying .rate {
+  color: #5b9d32;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.flight .amount-of-seates {
+  width: auto;
+  white-space: nowrap;
+  background-color: #eff0f1;
+  border-radius: 4px;
+  padding: 0 5px;
+  height: 30px;
+}
+
+.buying-information {
+  display: none;
+}
+
+.flight + .buying-information {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eff0f1;
+}
+
+.buying-information #form-buying {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 30px 30px;
+}
+
+.buying-information #form-buying > * {
+  margin: 5px 0;
+}
+
+.nope {
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.archiv {
+  width: 100%;
+  height: 100%;
+}
+
+.archiv .ticket {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #5b9d32;
+  white-space: nowrap;
+}
+
+.archiv .ticket > div {
+  width: 100%;
+  height: 100%;
+  padding: 15px 30px;
+}
+
+.archiv .ticket .cost {
+  width: auto;
+}
+
+.archiv .ticket > div > div {
+  padding: 5px;
+}
+
+.archiv .ticket .accent {
+  color: #5b9d32;
+}

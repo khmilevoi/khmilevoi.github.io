@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>User interface</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div class="pop-up pop-up-registration">
+        <h2>Регистрация</h2>
+        <div id="close-btn"><span></span><span></span></div>
+        <form id="registration">
+          <input
+            type="text"
+            placeholder="Введите ваше имя"
+            id="reg-firstname"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Введите вашу фамилию"
+            id="reg-lastname"
+            required
+          />
+          <input
+            type="phone"
+            placeholder="Введите ваш телефон в формате 380xxxxxxxxx"
+            id="reg-phone"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Введите ваш email"
+            id="reg-email"
+            required
+          />
+
+          <input
+            type="text"
+            placeholder="Введите ваш pasport id"
+            id="reg-pasport-id"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Придумайте пароль"
+            id="reg-password"
+            required
+          />
+          <button id="btn-reg">Зарегистрироваться</button>
+        </form>
+      </div>
+      <header class="header">
+        <div class="container navbar">
+          <div class="name-of-airport">
+            <img src="./img/logo.svg" alt="logo" />
+          </div>
+          <div class="login">
+            <div class="users-name" style="display: none">
+              <span></span>
+              <button id="sign-out">
+                <img src="./img/sign-out.svg" alt="" />
+              </button>
+            </div>
+            <form id="form-login">
+              <div class="inputs">
+                <input
+                  id="phone-login"
+                  form="form-login"
+                  type="text"
+                  placeholder="Введите телефон"
+                  required
+                />
+                <input
+                  id="password-login"
+                  from="form-login"
+                  type="password"
+                  placeholder="Введите пароль"
+                  required
+                />
+              </div>
+              <div class="buttons">
+                <button id="btn-login" form="form-login">Войти</button>
+                <button id="btn-registration" form="">Регистрация</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <div class="nav-div">
+          <span class="buying-ticket active">Покупка билета</span>
+          <span class="archiv"
+            >Архив<img id="refresh-icon" src="./img/refresh.svg" alt="refresh"
+          /></span>
+        </div>
+        <div class="content-div container">
+          <div class="buying-ticket">
+            <div class="search-field">
+              <form id="form-search">
+                <input
+                  type="date"
+                  name="search-date"
+                  id="search-date"
+                  placeholder="Введите дату отъезда"
+                  value="2000-01-18"
+                  required
+                />
+                <select name="search-airport" id="search-airport"></select>
+                <div class=" radio radio-class">
+                  <input
+                    type="radio"
+                    name="class"
+                    id="search-class-first"
+                    value="first"
+                    checked
+                  />
+                  <label for="search-class-first">Первый</label>
+                  <input
+                    type="radio"
+                    name="class"
+                    id="search-class-econom"
+                    value="econom"
+                  />
+                  <label for="search-class-econom">Эконом</label>
+                </div>
+                <button form="form-search" id="search-flights">Найти</button>
+              </form>
+            </div>
+            <div class="flights"></div>
+          </div>
+          <div class="archiv">
+            <div class="nope">
+              Необходимо авторизоваться для просмотра архива
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script src="../connection/connection.js"></script>
+  <script src="./js/common.js"></script>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin interface</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div class="pop-up pop-up-updates">
+      <div id="close-btn"><span></span><span></span></div>
+      <h2>Внесенные изменения</h2>
+      <table id="table-updates"></table>
+    </div>
+    <div class="pop-up pop-up-autorization locked">
+      <h2>Авторизация</h2>
+      <form id="autorization">
+        <input
+          type="text"
+          placeholder="Введите ваш login"
+          id="login-login"
+          required
+        />
+        <input
+          type="password"
+          placeholder="Придумайте пароль"
+          id="login-password"
+          required
+        />
+        <button id="btn-login">Войти</button>
+      </form>
+    </div>
+    <div id="root">
+      <header class="header">
+        <div class="container navbar">
+          <div class="name-of-airport">
+            <img src="./img/logo.svg" alt="logo" />(admin)
+          </div>
+          <div class="login">
+            <div class="users-name">
+              <div class="login-updates">
+                <span></span>
+                <a id="show-updates" href="#">внесенные изменения</a>
+              </div>
+              <button id="sign-out">
+                <img src="./img/sign-out.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <div class="nav-div">
+          <span class="update-tables active">Изменение таблиц</span>
+          <span class="data-analysis"
+            >Анализ данных<img
+              id="refresh-icon"
+              src="./img/refresh.svg"
+              alt="refresh"
+          /></span>
+        </div>
+        <div class="content-div container">
+          <div class="update-tables">
+            <div class="search-field">
+              <form id="form-select">
+                <select name="select-table" id="select-table"></select>
+              </form>
+              <form id="table-search">
+                <input
+                  type="text"
+                  name="table-search"
+                  id="table-search-input"
+                  placeholder="Поиск"
+                  form="table-search"
+                />
+                <button form="table-search" id="btn-table-search">
+                  <img src="./img/search.svg" alt="search" />
+                </button>
+              </form>
+            </div>
+            <table class="show-table"></table>
+          </div>
+          <div class="data-analysis">
+            <div class="analysis about-of-flight">
+              <h2>О рейсе</h2>
+              <div class="div-analysis">
+                <h3>Популярность авиакомпаний</h3>
+                <ul class="top-airlines"></ul>
+                <canvas class="schedule"></canvas>
+              </div>
+              <div class="div-analysis">
+                <h3>Популярность городов</h3>
+                <ul class="top-airport"></ul>
+                <canvas class="schedule"></canvas>
+              </div>
+              <div class="div-analysis">
+                <h3>Загруженность рейсов</h3>
+                <ul class="flight-congestion"></ul>
+                <canvas class="schedule"></canvas>
+              </div>
+            </div>
+            <div class="analysis airports-employees">
+              <h2>Сотрудники</h2>
+              <div class="div-analysis">
+                <h3>Работоспособность сотрудников</h3>
+                <ul class="employee-performance"></ul>
+                <canvas class="schedule"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script src="../connection/connection.js"></script>
+  <script src="./js/common.js"></script>
+</html>
