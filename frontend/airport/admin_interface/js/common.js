@@ -411,13 +411,33 @@ document.getElementById("show-updates").addEventListener("click", event => {
   show_updates(user.login);
 });
 
-document.getElementById("close-btn").addEventListener("click", event => {
-  var pop_up = document.getElementsByClassName("pop-up-updates")[0];
+document.getElementById("show-diagram").addEventListener("click", event => {
+  var pop_up = document.getElementsByClassName("pop-up-diagram")[0];
 
-  if (pop_up.className.indexOf("locked") >= 0) {
-    pop_up.className = pop_up.className.replace(" locked", "");
+  if (pop_up.className.indexOf("locked") < 0) {
+    pop_up.className += " locked";
   }
 });
+
+document
+  .getElementById("close-btn-updates")
+  .addEventListener("click", event => {
+    var pop_up = document.getElementsByClassName("pop-up-updates")[0];
+
+    if (pop_up.className.indexOf("locked") >= 0) {
+      pop_up.className = pop_up.className.replace(" locked", "");
+    }
+  });
+
+document
+  .getElementById("close-btn-diagram")
+  .addEventListener("click", event => {
+    var pop_up = document.getElementsByClassName("pop-up-diagram")[0];
+
+    if (pop_up.className.indexOf("locked") >= 0) {
+      pop_up.className = pop_up.className.replace(" locked", "");
+    }
+  });
 
 function show_update_table(result) {
   var tbl_body = document.createElement("tbody");

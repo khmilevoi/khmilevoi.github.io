@@ -8,9 +8,21 @@
   </head>
   <body>
     <div class="pop-up pop-up-updates">
-      <div id="close-btn"><span></span><span></span></div>
+      <div class="close-btn" id="close-btn-updates">
+        <span></span><span></span>
+      </div>
       <h2>Внесенные изменения</h2>
       <table id="table-updates"></table>
+    </div>
+    <div class="pop-up pop-up-diagram">
+      <div class="close-btn" id="close-btn-diagram">
+        <span></span><span></span>
+      </div>
+      <h2>ER диаграмы</h2>
+      <div class="diagrams">
+        <img src="./img/airport.png" /> <img src="./img/employees.png" />
+        <img src="./img/users.png" />
+      </div>
     </div>
     <div class="pop-up pop-up-autorization locked">
       <h2>Авторизация</h2>
@@ -41,6 +53,7 @@
               <div class="login-updates">
                 <span></span>
                 <a id="show-updates" href="#">внесенные изменения</a>
+                <a id="show-diagram" href="#">показать ER диаграмму</a>
               </div>
               <button id="sign-out">
                 <img src="./img/sign-out.svg" alt="" />
