@@ -74,7 +74,7 @@ let arrays = [];
 
 const HOST = location.origin.replace(/^http/, "ws");
 
-const ws = new WebSocket("ws://localhost:3000");
+const ws = new WebSocket(HOST);
 
 ws.onopen = () => {
   console.log("Online");
