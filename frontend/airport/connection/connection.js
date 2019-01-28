@@ -72,9 +72,7 @@ class User {
 let user = new User();
 let arrays = [];
 
-const HOST = location.origin.replace(/^http/, "ws");
-
-const ws = new WebSocket(HOST);
+const ws = new WebSocket("ws://localhost:3000");
 
 ws.onopen = () => {
   console.log("Online");

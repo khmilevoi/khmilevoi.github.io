@@ -1,7 +1,5 @@
 const Pool = require("pg").Pool;
 const web_socket = require("ws");
-const express = require("express");
-const path = require("path");
 
 const airport = {
   host: "localhost",
@@ -67,21 +65,15 @@ const use = {
   any: "any"
 };
 
-const PORT = process.env.PORT || 3000;
-const INDEX = path.join(__dirname, "../user_interface/index.html");
+const _PORT = 3000;
 
-const server = express()
-  .use((req, res) => res.sendFile(INDEX))
-  .listen(PORT, () => console.log(`Listening on ${PORT}`));
+const server = new web_socket.Server({ port: _PORT });
 
-const wss = new web_socket.Server({ server });
-
-wss.on("connection", (ws, res) => {
-  console.log("Client connected");
-  ws.on("close", () => console.log("Client disconnected"));
+server.on("connection", (ws, res) => {
+  console.log(`Server started on ${_PORT}`);
 
   ws.on("message", message => {
-    wss.clients.forEach(async client => {
+    server.clients.forEach(async client => {
       if (client.readyState == web_socket.OPEN) {
         if (message != "undefined") {
           message = JSON.parse(message);
