@@ -3,11 +3,14 @@ class Ball {
     this.x = x;
     this.y = y;
     this.r = r;
+    this.angle = 0;
+
+    this.step = 10;
 
     this.context = context;
 
     this.rays = new Array();
-    for (let ang = 0; ang < 360; ang += 0.5) {
+    for (let ang = 0; ang < 60; ang += 0.2) {
       this.rays.push(new Ray(this.context, this.x, this.y, ang));
     }
 
@@ -17,6 +20,29 @@ class Ball {
   moveTo(x, y) {
     this.x = x;
     this.y = y;
+  }
+
+  move(dir) {
+    const angle = (this.angle * Math.PI) / 180 + (Math.PI * 2) / 3;
+
+    const xoff = Math.cos(angle) * this.step;
+    const yoff = Math.sin(angle) * this.step;
+
+    if (dir === 1) {
+      this.x += xoff;
+      this.y += yoff;
+    } else {
+      this.x -= xoff;
+      this.y -= yoff;
+    }
+  }
+
+  rotate(angleoff) {
+    this.angle += angleoff;
+
+    this.angle = this.angle % 360;
+
+    this.rays.forEach(val => val.rotate((this.angle * Math.PI) / 180));
   }
 
   checkCast(walls) {
@@ -44,12 +70,14 @@ class Ball {
 
         this.context.translate(this.x, this.y);
 
-        this.context.rotate(Math.PI / 2 + ray.angle);
+        this.context.rotate(
+          Math.PI / 2 + ray.angle + (this.angle * Math.PI) / 180
+        );
 
         this.context.fillStyle = "rgba(255, 255, 255, 0.3)";
         this.context.fillRect(0, 0, best_dist, 1);
 
-        this.raysToWall.push(this.x, this.y, best_pt);
+        this.raysToWall.push({ x: this.x, y: this.y, d: best_dist });
 
         this.context.restore();
       }

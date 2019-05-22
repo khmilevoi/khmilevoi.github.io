@@ -4,6 +4,7 @@ class Ray {
     this.start_y = y;
 
     this.angle = (angle / 180) * Math.PI;
+    this.angleoff = 0;
 
     this.context = context;
 
@@ -16,6 +17,13 @@ class Ray {
   moveTo(x, y) {
     this.start_x = x;
     this.start_y = y;
+  }
+
+  rotate(aoff) {
+    this.angleoff = aoff;
+
+    this.direct_x = Math.sin(this.angle + this.angleoff) * this.length;
+    this.direct_y = Math.cos(this.angle + this.angleoff) * this.length;
   }
 
   cast(wall) {
